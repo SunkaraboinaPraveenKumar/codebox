@@ -1,0 +1,540 @@
+{
+  "courses": [
+    {
+      "courseId": 1,
+      "title": "HTML Beginner",
+      "description": "Learn HTML from scratch with interactive exercises and build your first web pages",
+      "bannerImage": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800",
+      "level": "beginner",
+      "tags": "html,web,frontend",
+      "editorType": "static"
+    },
+    {
+      "courseId": 2,
+      "title": "CSS Fundamentals",
+      "description": "Master CSS styling, layouts, and responsive design techniques",
+      "bannerImage": "https://images.unsplash.com/photo-1523437113738-bbd3cc89fb19?w=800",
+      "level": "beginner",
+      "tags": "css,styling,frontend",
+      "editorType": "static"
+    },
+    {
+      "courseId": 3,
+      "title": "JavaScript Basics",
+      "description": "Learn JavaScript programming fundamentals and DOM manipulation",
+      "bannerImage": "https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?w=800",
+      "level": "intermediate",
+      "tags": "javascript,programming,frontend",
+      "editorType": "static"
+    },
+    {
+      "courseId": 4,
+      "title": "React for Beginners",
+      "description": "Build modern web applications with React and learn component-based development",
+      "bannerImage": "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800",
+      "level": "intermediate",
+      "tags": "react,javascript,frontend",
+      "editorType": "react"
+    }
+  ],
+  "chapters": [
+    {
+      "courseId": 1,
+      "chapterId": 1,
+      "name": "Introduction to HTML",
+      "description": "Learn the basics of HTML and create your first web page",
+      "exercises": [
+        {
+          "name": "Your First HTML Page",
+          "slug": "your-first-html-page",
+          "xp": 20,
+          "difficulty": "easy"
+        },
+        {
+          "name": "HTML Document Structure",
+          "slug": "html-document-structure",
+          "xp": 25,
+          "difficulty": "easy"
+        },
+        {
+          "name": "HTML Headings",
+          "slug": "html-headings",
+          "xp": 15,
+          "difficulty": "easy"
+        },
+        {
+          "name": "Paragraphs and Text",
+          "slug": "paragraphs-and-text",
+          "xp": 15,
+          "difficulty": "easy"
+        }
+      ]
+    },
+    {
+      "courseId": 1,
+      "chapterId": 2,
+      "name": "HTML Elements & Content",
+      "description": "Explore different HTML elements and their uses",
+      "exercises": [
+        {
+          "name": "Links and Anchors",
+          "slug": "links-and-anchors",
+          "xp": 20,
+          "difficulty": "easy"
+        },
+        {
+          "name": "Images in HTML",
+          "slug": "images-in-html",
+          "xp": 20,
+          "difficulty": "easy"
+        },
+        {
+          "name": "Lists - Ordered & Unordered",
+          "slug": "lists",
+          "xp": 25,
+          "difficulty": "medium"
+        },
+        {
+          "name": "Tables",
+          "slug": "tables",
+          "xp": 30,
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "courseId": 1,
+      "chapterId": 3,
+      "name": "HTML Forms (Pro)",
+      "description": "Learn to create interactive forms and user inputs",
+      "exercises": [
+        {
+          "name": "Basic Form Structure",
+          "slug": "basic-form",
+          "xp": 30,
+          "difficulty": "medium"
+        },
+        {
+          "name": "Form Input Types",
+          "slug": "form-inputs",
+          "xp": 35,
+          "difficulty": "medium"
+        },
+        {
+          "name": "Form Validation",
+          "slug": "form-validation",
+          "xp": 40,
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "courseId": 1,
+      "chapterId": 4,
+      "name": "Semantic HTML (Pro)",
+      "description": "Learn modern semantic HTML5 elements",
+      "exercises": [
+        {
+          "name": "Semantic Elements",
+          "slug": "semantic-elements",
+          "xp": 35,
+          "difficulty": "medium"
+        },
+        {
+          "name": "HTML5 Layout",
+          "slug": "html5-layout",
+          "xp": 40,
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "courseId": 2,
+      "chapterId": 1,
+      "name": "CSS Basics",
+      "description": "Introduction to CSS and styling fundamentals",
+      "exercises": [
+        {
+          "name": "Your First CSS",
+          "slug": "your-first-css",
+          "xp": 20,
+          "difficulty": "easy"
+        },
+        {
+          "name": "CSS Selectors",
+          "slug": "css-selectors",
+          "xp": 25,
+          "difficulty": "easy"
+        },
+        {
+          "name": "Colors and Backgrounds",
+          "slug": "colors-backgrounds",
+          "xp": 20,
+          "difficulty": "easy"
+        },
+        {
+          "name": "Text Styling",
+          "slug": "text-styling",
+          "xp": 20,
+          "difficulty": "easy"
+        }
+      ]
+    },
+    {
+      "courseId": 2,
+      "chapterId": 2,
+      "name": "CSS Layout & Box Model",
+      "description": "Understanding CSS box model and layout techniques",
+      "exercises": [
+        {
+          "name": "The Box Model",
+          "slug": "box-model",
+          "xp": 30,
+          "difficulty": "medium"
+        },
+        {
+          "name": "Margins and Padding",
+          "slug": "margins-padding",
+          "xp": 25,
+          "difficulty": "medium"
+        },
+        {
+          "name": "Display Properties",
+          "slug": "display-properties",
+          "xp": 30,
+          "difficulty": "medium"
+        },
+        {
+          "name": "Positioning",
+          "slug": "positioning",
+          "xp": 35,
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "courseId": 2,
+      "chapterId": 3,
+      "name": "Flexbox & Grid (Pro)",
+      "description": "Modern CSS layout with Flexbox and Grid",
+      "exercises": [
+        {
+          "name": "Flexbox Basics",
+          "slug": "flexbox-basics",
+          "xp": 40,
+          "difficulty": "medium"
+        },
+        {
+          "name": "Flexbox Layout",
+          "slug": "flexbox-layout",
+          "xp": 45,
+          "difficulty": "hard"
+        },
+        {
+          "name": "CSS Grid Basics",
+          "slug": "css-grid-basics",
+          "xp": 50,
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "courseId": 2,
+      "chapterId": 4,
+      "name": "Responsive Design (Pro)",
+      "description": "Create responsive websites that work on all devices",
+      "exercises": [
+        {
+          "name": "Media Queries",
+          "slug": "media-queries",
+          "xp": 40,
+          "difficulty": "medium"
+        },
+        {
+          "name": "Mobile-First Design",
+          "slug": "mobile-first",
+          "xp": 45,
+          "difficulty": "hard"
+        },
+        {
+          "name": "CSS Animations",
+          "slug": "css-animations",
+          "xp": 50,
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "courseId": 3,
+      "chapterId": 1,
+      "name": "JavaScript Fundamentals",
+      "description": "Learn JavaScript basics and programming concepts",
+      "exercises": [
+        {
+          "name": "Your First JavaScript",
+          "slug": "your-first-javascript",
+          "xp": 25,
+          "difficulty": "easy"
+        },
+        {
+          "name": "Variables and Data Types",
+          "slug": "variables-data-types",
+          "xp": 30,
+          "difficulty": "easy"
+        },
+        {
+          "name": "Operators",
+          "slug": "operators",
+          "xp": 25,
+          "difficulty": "easy"
+        },
+        {
+          "name": "Console and Debugging",
+          "slug": "console-debugging",
+          "xp": 20,
+          "difficulty": "easy"
+        }
+      ]
+    },
+    {
+      "courseId": 3,
+      "chapterId": 2,
+      "name": "Control Flow & Functions",
+      "description": "Learn conditional statements, loops, and functions",
+      "exercises": [
+        {
+          "name": "If Statements",
+          "slug": "if-statements",
+          "xp": 30,
+          "difficulty": "medium"
+        },
+        {
+          "name": "Loops",
+          "slug": "loops",
+          "xp": 35,
+          "difficulty": "medium"
+        },
+        {
+          "name": "Functions",
+          "slug": "functions",
+          "xp": 40,
+          "difficulty": "medium"
+        },
+        {
+          "name": "Arrow Functions",
+          "slug": "arrow-functions",
+          "xp": 35,
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "courseId": 3,
+      "chapterId": 3,
+      "name": "DOM Manipulation (Pro)",
+      "description": "Learn to interact with HTML elements using JavaScript",
+      "exercises": [
+        {
+          "name": "Selecting Elements",
+          "slug": "selecting-elements",
+          "xp": 40,
+          "difficulty": "medium"
+        },
+        {
+          "name": "Changing Content",
+          "slug": "changing-content",
+          "xp": 45,
+          "difficulty": "medium"
+        },
+        {
+          "name": "Event Listeners",
+          "slug": "event-listeners",
+          "xp": 50,
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "courseId": 3,
+      "chapterId": 4,
+      "name": "Advanced JavaScript (Pro)",
+      "description": "Objects, arrays, and modern JavaScript features",
+      "exercises": [
+        {
+          "name": "Objects and Arrays",
+          "slug": "objects-arrays",
+          "xp": 45,
+          "difficulty": "hard"
+        },
+        {
+          "name": "Array Methods",
+          "slug": "array-methods",
+          "xp": 50,
+          "difficulty": "hard"
+        },
+        {
+          "name": "Async JavaScript",
+          "slug": "async-javascript",
+          "xp": 60,
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "courseId": 4,
+      "chapterId": 1,
+      "name": "React Basics",
+      "description": "Introduction to React and component-based development",
+      "exercises": [
+        {
+          "name": "Your First React Component",
+          "slug": "first-react-component",
+          "xp": 30,
+          "difficulty": "medium"
+        },
+        {
+          "name": "JSX Syntax",
+          "slug": "jsx-syntax",
+          "xp": 35,
+          "difficulty": "medium"
+        },
+        {
+          "name": "Props",
+          "slug": "props",
+          "xp": 40,
+          "difficulty": "medium"
+        },
+        {
+          "name": "Rendering Lists",
+          "slug": "rendering-lists",
+          "xp": 45,
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "courseId": 4,
+      "chapterId": 2,
+      "name": "State & Events",
+      "description": "Learn React state management and event handling",
+      "exercises": [
+        {
+          "name": "useState Hook",
+          "slug": "usestate-hook",
+          "xp": 50,
+          "difficulty": "medium"
+        },
+        {
+          "name": "Event Handling",
+          "slug": "event-handling",
+          "xp": 45,
+          "difficulty": "medium"
+        },
+        {
+          "name": "Conditional Rendering",
+          "slug": "conditional-rendering",
+          "xp": 40,
+          "difficulty": "medium"
+        },
+        {
+          "name": "Forms in React",
+          "slug": "forms-react",
+          "xp": 55,
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "courseId": 4,
+      "chapterId": 3,
+      "name": "Advanced React (Pro)",
+      "description": "Advanced React concepts and hooks",
+      "exercises": [
+        {
+          "name": "useEffect Hook",
+          "slug": "useeffect-hook",
+          "xp": 60,
+          "difficulty": "hard"
+        },
+        {
+          "name": "Custom Hooks",
+          "slug": "custom-hooks",
+          "xp": 65,
+          "difficulty": "hard"
+        },
+        {
+          "name": "Context API",
+          "slug": "context-api",
+          "xp": 70,
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "courseId": 4,
+      "chapterId": 4,
+      "name": "React Projects (Pro)",
+      "description": "Build real-world React applications",
+      "exercises": [
+        {
+          "name": "Todo App",
+          "slug": "todo-app",
+          "xp": 80,
+          "difficulty": "hard"
+        },
+        {
+          "name": "Weather App",
+          "slug": "weather-app",
+          "xp": 90,
+          "difficulty": "hard"
+        },
+        {
+          "name": "React Router",
+          "slug": "react-router",
+          "xp": 75,
+          "difficulty": "hard"
+        }
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "courseId": 1,
+      "chapterId": 1,
+      "exerciseId": "your-first-html-page",
+      "exerciseName": "Your First HTML Page",
+      "exerciseContent": {
+        "content": "<h2>Welcome to HTML! 🎉</h2><p>HTML (HyperText Markup Language) is the standard markup language for creating web pages. Every website you visit is built with HTML.</p><p>Think of HTML as the skeleton of a webpage - it provides the structure and content that browsers can understand and display.</p><h3>Basic HTML Structure:</h3><pre>&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n  &lt;head&gt;\n    &lt;title&gt;Page Title&lt;/title&gt;\n  &lt;/head&gt;\n  &lt;body&gt;\n    &lt;h1&gt;My First Heading&lt;/h1&gt;\n    &lt;p&gt;My first paragraph.&lt;/p&gt;\n  &lt;/body&gt;\n&lt;/html&gt;</pre><p><strong>Key Points:</strong></p><ul><li><code>&lt;!DOCTYPE html&gt;</code> tells the browser this is HTML5</li><li><code>&lt;html&gt;</code> is the root element</li><li><code>&lt;head&gt;</code> contains metadata (not visible on page)</li><li><code>&lt;body&gt;</code> contains the visible content</li></ul>",
+        "task": "<p><strong>Your Task:</strong></p><p>Create a simple HTML page with:</p><ul><li>A heading that says 'Hello World'</li><li>A paragraph with your name</li><li>Another paragraph describing what you want to learn</li></ul>",
+        "hint": "<p>💡 <strong>Hint:</strong> Use the &lt;h1&gt; tag for the heading and &lt;p&gt; tags for paragraphs. Make sure they're inside the &lt;body&gt; tag!</p>",
+        "hintXp": 5,
+        "starterCode": {
+          "/index.html": {
+            "code": "<!DOCTYPE html>\n<html>\n<head>\n  <title>My First Page</title>\n</head>\n<body>\n  <!-- Write your code here -->\n  \n</body>\n</html>"
+          }
+        },
+        "output": "A web page displaying 'Hello World' as a heading, your name, and learning goals",
+        "xp": 20
+      }
+    },
+    {
+      "courseId": 1,
+      "chapterId": 1,
+      "exerciseId": "html-document-structure",
+      "exerciseName": "HTML Document Structure",
+      "exerciseContent": {
+        "content": "<h2>Understanding HTML Document Structure 📋</h2><p>Every HTML document follows a specific structure. Let's break down each part:</p><h3>The DOCTYPE Declaration</h3><p><code>&lt;!DOCTYPE html&gt;</code> must be the very first line. It tells the browser which version of HTML you're using.</p><h3>The HTML Element</h3><p><code>&lt;html&gt;</code> is the root element that wraps all content on the page.</p><h3>The Head Section</h3><p><code>&lt;head&gt;</code> contains metadata about the document:</p><ul><li><code>&lt;title&gt;</code> - appears in browser tab</li><li><code>&lt;meta&gt;</code> - provides metadata</li><li><code>&lt;link&gt;</code> - links to external resources</li></ul><h3>The Body Section</h3><p><code>&lt;body&gt;</code> contains all visible content that users see.</p>",
+        "task": "<p>Create a page with:</p><ul><li>An &lt;h1&gt; heading: 'My Blog'</li><li>An &lt;h2&gt; heading: 'About Me'</li><li>An &lt;h3&gt; heading: 'My Interests'</li></ul>",
+        "hint": "<p>Remember to use the correct heading tags in order. Each heading should be on its own line.</p>",
+        "hintXp": 5,
+        "starterCode": {
+          "/index.html": {
+            "code": "<!DOCTYPE html>\n<html>\n<head>\n  <title>Headings Practice</title>\n</head>\n<body>\n  <!-- Add your headings here -->\n  \n</body>\n</html>"
+          }
+        },
+        "output": "A page with three different heading levels",
+        "xp": 15
+      }
+    }
+  ]
+}

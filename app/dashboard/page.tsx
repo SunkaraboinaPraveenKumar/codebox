@@ -1,0 +1,268 @@
+"use client"
+
+import { useEffect, useState } from 'react'
+import { useUser } from '@clerk/nextjs'
+import axios from 'axios'
+import Link from 'next/link'
+import Image from 'next/image'
+import { Header } from '@/components/Header'
+import { Button } from '@/components/ui/button'
+import { Progress } from '@/components/ui/progress'
+import { CourseCard } from '@/components/CourseCard'
+import { useUserDetail } from '@/context/UserDetailContext'
+
+interface EnrolledCourse {
+  courseId: number
+  title: string
+  description: string
+  bannerImage: string
+  level: string
+  totalExercises: number
+  completedExercises: number
+  xpEarned: number
+}
+
+export default function DashboardPage() {
+  const { user } = useUser()
+  const { userDetail } = useUserDetail()
+  const [enrolledCourses, setEnrolledCourses] = useState<EnrolledCourse[]>([])
+  const [allCourses, setAllCourses] = useState<any[]>([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    fetchData()
+  }, [])
+
+  const fetchData = async () => {
+    try {
+      const [enrolledRes, allCoursesRes] = await Promise.all([
+        axios.get('/api/course?courseId=enroll'),
+        axios.get('/api/course')
+      ])
+      setEnrolledCourses(enrolledRes.data)
+      setAllCourses(allCoursesRes.data.slice(0, 5))
+    } catch (error) {
+      console.error('Error fetching data:', error)
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-zinc-950 via-purple-950/20 to-zinc-950">
+      <Header />
+      
+      <div className="container mx-auto px-4 py-8">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+          {/* Left Column */}
+          <div className="lg:col-span-3 space-y-8">
+            {/* Welcome Banner */}
+            <div className="bg-gradient-to-r from-purple-900/50 via-blue-900/50 to-purple-900/50 border-4 border-purple-500/30 rounded-2xl p-6 flex items-center gap-6 hover:border-purple-500 transition-all">
+              <div className="text-8xl animate-bounce">👋</div>
+              <div>
+                <h2 className="text-3xl font-game mb-2 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+                  Welcome back, {user?.firstName || 'Learner'}!
+                </h2>
+                <p className="text-gray-300 text-lg">
+                  🚀 Continue your coding journey and earn more XP
+                </p>
+              </div>
+            </div>
+
+            {/* Enrolled Courses */}
+            <div>
+              <h3 className="text-4xl font-game mb-6 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+                📚 Your Enrolled Courses
+              </h3>
+              
+              {loading ? (
+                <div className="text-center py-12">
+                  <div className="inline-block animate-spin rounded-full h-12 w-12 border-4 border-purple-500 border-t-transparent mb-4"></div>
+                  <p className="text-gray-400">Loading...</p>
+                </div>
+              ) : enrolledCourses.length === 0 ? (
+                <div className="bg-gradient-to-br from-zinc-900 to-zinc-800 border-4 border-purple-500/30 rounded-2xl p-12">
+                  <div className="flex flex-col items-center justify-center text-center">
+                    <div className="text-8xl mb-6 animate-bounce">📚</div>
+                    <h4 className="text-3xl font-game mb-4 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+                      No Courses Yet
+                    </h4>
+                    <p className="text-xl text-gray-400 mb-8 max-w-md">
+                      Start your learning journey by enrolling in a course!
+                    </p>
+                    <Link href="/courses">
+                      <Button variant="pixel" size="lg">
+                        Browse All Courses →
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+              ) : (
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {enrolledCourses.map((course) => (
+                    <Link key={course.courseId} href={`/courses/${course.courseId}`}>
+                      <div className="bg-gradient-to-br from-zinc-900 to-zinc-800 border-4 border-purple-500/30 rounded-2xl overflow-hidden hover:border-purple-500 hover:shadow-lg hover:shadow-purple-500/50 transition-all cursor-pointer hover:scale-105">
+                        <div className="relative h-36 w-full overflow-hidden">
+                          <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-transparent to-transparent z-10"></div>
+                          <Image
+                            src={course.bannerImage}
+                            alt={course.title}
+                            fill
+                            className="object-cover hover:scale-110 transition-transform duration-300"
+                          />
+                        </div>
+                        <div className="p-4">
+                          <h4 className="text-2xl font-game mb-2 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+                            {course.title}
+                          </h4>
+                          <p className="text-sm text-gray-400 mb-3">
+                            {course.completedExercises} / {course.totalExercises} exercises
+                          </p>
+                          <Progress 
+                            value={(course.completedExercises / course.totalExercises) * 100} 
+                            className="mb-3 h-2"
+                          />
+                          <div className="flex items-center gap-2 bg-yellow-500/20 text-yellow-500 px-3 py-1 rounded-full text-sm font-bold inline-flex">
+                            <span>⭐</span>
+                            <span>{course.xpEarned} XP</span>
+                          </div>
+                        </div>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Explore More */}
+            <div>
+              <h3 className="text-4xl font-game mb-6 bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">
+                🎯 Explore More
+              </h3>
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { name: 'All Courses', emoji: '📚', link: '/courses', color: 'from-blue-500 to-purple-500' },
+                  { name: 'Community', emoji: '👥', link: '/community', color: 'from-green-500 to-emerald-500' },
+                  { name: 'Projects', emoji: '🚀', link: '/projects', color: 'from-orange-500 to-red-500' },
+                  { name: 'Pricing', emoji: '💎', link: '/pricing', color: 'from-yellow-500 to-orange-500' },
+                ].map((item) => (
+                  <Link key={item.name} href={item.link}>
+                    <div className={`flex items-center gap-3 p-4 bg-gradient-to-r ${item.color} bg-opacity-10 border-2 border-zinc-700 rounded-xl hover:border-opacity-100 hover:scale-105 transition-all cursor-pointer`}>
+                      <div className="text-4xl">{item.emoji}</div>
+                      <span className="text-lg font-game text-white">{item.name}</span>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* Explore Other Courses */}
+            <div>
+              <h3 className="text-4xl font-game mb-6 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                🎓 Explore Other Courses
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+                {allCourses.map((course) => (
+                  <CourseCard
+                    key={course.id}
+                    courseId={course.courseId}
+                    title={course.title}
+                    description={course.description}
+                    bannerImage={course.bannerImage}
+                    level={course.level}
+                    smallerCard
+                  />
+                ))}
+              </div>
+              <div className="text-center">
+                <Link href="/courses">
+                  <Button variant="pixel">View All</Button>
+                </Link>
+              </div>
+            </div>
+
+            {/* Invite Friend */}
+            <div className="bg-gradient-to-br from-zinc-900 to-zinc-800 border-4 border-pink-500/30 rounded-xl p-6 hover:border-pink-500 transition-all">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="text-6xl">📧</div>
+                <div>
+                  <h3 className="text-3xl font-game bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
+                    Invite Friend
+                  </h3>
+                  <p className="text-gray-400">Share Codebox with your friends</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <input
+                  type="email"
+                  placeholder="friend@example.com"
+                  className="flex-1 px-4 py-2 bg-zinc-800 border-2 border-zinc-700 rounded-lg text-white placeholder:text-gray-500 focus:outline-none focus:border-pink-500 transition-colors"
+                />
+                <Button variant="pixel" className="bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 border-pink-400">
+                  Invite
+                </Button>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column */}
+          <div className="space-y-8">
+            {/* User Status */}
+            <div className="bg-gradient-to-br from-zinc-900 to-zinc-800 border-4 border-purple-500/30 rounded-2xl p-6">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="text-6xl">👤</div>
+                <p className="text-lg font-game text-gray-300 break-all">{user?.emailAddresses[0]?.emailAddress}</p>
+              </div>
+              
+              <div className="grid grid-cols-2 gap-4">
+                <div className="flex flex-col items-center gap-2 p-4 bg-gradient-to-br from-yellow-500/20 to-orange-500/20 border-2 border-yellow-500/30 rounded-lg hover:border-yellow-500 transition-all">
+                  <div className="text-4xl">⭐</div>
+                  <p className="text-3xl font-bold text-yellow-500">{userDetail?.points || 0}</p>
+                  <p className="text-sm text-gray-300 font-semibold">Total XP</p>
+                </div>
+                <div className="flex flex-col items-center gap-2 p-4 bg-gradient-to-br from-purple-500/20 to-pink-500/20 border-2 border-purple-500/30 rounded-lg hover:border-purple-500 transition-all">
+                  <div className="text-4xl">🏆</div>
+                  <p className="text-3xl font-bold text-purple-400">0</p>
+                  <p className="text-sm text-gray-300 font-semibold">Badges</p>
+                </div>
+                <div className="flex flex-col items-center gap-2 p-4 bg-gradient-to-br from-red-500/20 to-orange-500/20 border-2 border-red-500/30 rounded-lg col-span-2 hover:border-red-500 transition-all">
+                  <div className="text-4xl">🔥</div>
+                  <p className="text-3xl font-bold text-red-500">0</p>
+                  <p className="text-sm text-gray-300 font-semibold">Day Streak</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Upgrade to Pro */}
+            {!userDetail?.subscription && (
+              <div className="bg-gradient-to-br from-purple-900 to-blue-900 border-4 border-purple-500 rounded-2xl p-6 text-center hover:scale-105 transition-transform">
+                <div className="text-6xl mb-4">💎</div>
+                <h3 className="text-3xl font-game mb-3 text-white">Upgrade to Pro</h3>
+                <p className="text-gray-200 mb-6">
+                  Unlock all courses and features!
+                </p>
+                <Link href="/pricing">
+                  <Button variant="pixel" className="w-full bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 border-yellow-400">
+                    ⚡ Upgrade Now
+                  </Button>
+                </Link>
+              </div>
+            )}
+
+            {/* Community Help */}
+            <div className="bg-gradient-to-br from-zinc-900 to-zinc-800 border-4 border-green-500/30 rounded-xl p-6 text-center hover:border-green-500 transition-all">
+              <div className="text-5xl mb-4">💬</div>
+              <h3 className="text-3xl font-game mb-3 text-white">Need Help?</h3>
+              <p className="text-gray-400 mb-4">Join our community</p>
+              <Link href="/community">
+                <Button variant="pixel" className="w-full bg-green-600 hover:bg-green-700 border-green-400">
+                  Go to Community
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}

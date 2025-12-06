@@ -1,0 +1,23 @@
+Required images for Codebox:
+
+Place the following images in the /public directory:
+
+1. logo.png - App logo (40x40px)
+2. hero.gif - Animated pixel background for hero section
+3. machine.webp - Animated robot for welcome banner (120x120px)
+4. alex.gif - Walking character animation (70x70px)
+5. books.png - Empty state book icon (90x90px)
+6. mail.png - Invite friend mail icon (80x80px)
+7. star.png - XP/rewards star icon (50x50px)
+8. badge.png - Badge icon (40x40px)
+9. fire.png - Daily strike icon (40x40px)
+10. game.png - All Courses icon (80x80px)
+11. growth.png - Community icon (80x80px)
+12. startup.png - Projects icon (80x80px)
+13. tree.png - Explore Apps icon (80x80px)
+
+You can find pixel-style gaming assets from:
+- OpenGameArt.org
+- Itch.io (free game assets)
+- Kenney.nl (free game assets)
+- Create your own using Piskel or Aseprite
