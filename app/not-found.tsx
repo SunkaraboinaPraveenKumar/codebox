@@ -9,7 +9,13 @@ export default function NotFound() {
       
       <div className="container mx-auto px-4 py-20">
         <div className="max-w-2xl mx-auto text-center">
-          <div className="text-9xl mb-8 animate-bounce">🔍</div>
+          <div className="mb-8">
+            <img 
+              src="/programmer.gif" 
+              alt="404 Not Found" 
+              className="w-64 h-64 mx-auto rounded-lg"
+            />
+          </div>
           
           <h1 className="text-8xl font-game mb-6 bg-gradient-to-r from-red-400 to-pink-400 bg-clip-text text-transparent">
             404

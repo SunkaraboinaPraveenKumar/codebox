@@ -125,11 +125,12 @@ export default function ExercisePlayground() {
     return (
       <div className="min-h-screen bg-slate-900 flex items-center justify-center">
         <div className="text-center">
-          <div className="relative mb-6">
-            <div className="inline-block animate-spin rounded-full h-20 w-20 border-4 border-slate-700 border-t-yellow-400"></div>
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-4xl animate-pulse">💻</div>
-            </div>
+          <div className="mb-6">
+            <img 
+              src="/loading.gif" 
+              alt="Loading..." 
+              className="w-32 h-32 mx-auto"
+            />
           </div>
           <p className="text-2xl font-game text-white mb-2">Loading exercise...</p>
           <p className="text-gray-400">Setting up your coding environment</p>
@@ -141,8 +142,14 @@ export default function ExercisePlayground() {
   if (!exerciseData) {
     return (
       <div className="min-h-screen bg-slate-900 flex items-center justify-center">
-        <div className="text-center py-20">
-          <div className="text-8xl mb-6">❌</div>
+        <div className="text-center py-20 px-4">
+          <div className="mb-6">
+            <img 
+              src="/programmer.gif" 
+              alt="Not Found" 
+              className="w-48 h-48 mx-auto rounded-lg"
+            />
+          </div>
           <h3 className="text-4xl font-game text-white mb-4">Exercise Not Found</h3>
           <p className="text-xl text-gray-400 mb-8">
             This exercise doesn't exist or has been removed.

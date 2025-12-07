@@ -108,13 +108,25 @@ export default function DashboardPage() {
               
               {loading ? (
                 <div className="text-center py-12">
-                  <div className="inline-block animate-spin rounded-full h-12 w-12 border-4 border-purple-500 border-t-transparent mb-4"></div>
-                  <p className="text-gray-400">Loading...</p>
+                  <div className="mb-4">
+                    <img 
+                      src="/loading.gif" 
+                      alt="Loading..." 
+                      className="w-24 h-24 mx-auto"
+                    />
+                  </div>
+                  <p className="text-gray-400">Loading your courses...</p>
                 </div>
               ) : enrolledCourses.length === 0 ? (
                 <div className="bg-gradient-to-br from-zinc-900 to-zinc-800 border-4 border-purple-500/30 rounded-2xl p-12">
                   <div className="flex flex-col items-center justify-center text-center">
-                    <div className="text-8xl mb-6 animate-bounce">📚</div>
+                    <div className="mb-6">
+                      <img 
+                        src="/programmer.gif" 
+                        alt="No courses" 
+                        className="w-48 h-48 mx-auto rounded-lg"
+                      />
+                    </div>
                     <h4 className="text-3xl font-game mb-4 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
                       No Courses Yet
                     </h4>

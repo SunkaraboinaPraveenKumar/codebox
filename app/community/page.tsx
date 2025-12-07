@@ -16,8 +16,12 @@ export default function CommunityPage() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(34,197,94,0.1)_0%,transparent_50%)]" />
         
         <div className="container mx-auto px-4 text-center relative z-10">
-          <div className="inline-block mb-6">
-            <div className="text-8xl animate-bounce">👥</div>
+          <div className="mb-6">
+            <img 
+              src="/programmer.gif" 
+              alt="Community" 
+              className="w-48 h-48 mx-auto rounded-lg"
+            />
           </div>
           <h1 className="text-6xl md:text-7xl font-game mb-6 bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
             Community

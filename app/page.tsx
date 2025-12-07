@@ -87,7 +87,13 @@ export default function Home() {
           
           {loading ? (
             <div className="text-center text-white text-xl">
-              <div className="inline-block animate-spin rounded-full h-12 w-12 border-4 border-yellow-400 border-t-transparent"></div>
+              <div className="mb-4">
+                <img 
+                  src="/loading.gif" 
+                  alt="Loading..." 
+                  className="w-24 h-24 mx-auto"
+                />
+              </div>
               <p className="mt-4">Loading courses...</p>
             </div>
           ) : (

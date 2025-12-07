@@ -77,13 +77,25 @@ export default function CoursesPage() {
         <div className="container mx-auto px-4">
           {loading ? (
             <div className="text-center text-white text-xl py-20">
-              <div className="inline-block animate-spin rounded-full h-16 w-16 border-4 border-yellow-400 border-t-transparent mb-6"></div>
+              <div className="mb-6">
+                <img 
+                  src="/loading.gif" 
+                  alt="Loading..." 
+                  className="w-32 h-32 mx-auto"
+                />
+              </div>
               <p className="text-2xl font-game">Loading courses...</p>
               <p className="text-gray-400 mt-2">Please wait while we fetch the latest courses</p>
             </div>
           ) : courses.length === 0 ? (
             <div className="text-center py-20">
-              <div className="text-8xl mb-8">📚</div>
+              <div className="mb-8">
+                <img 
+                  src="/programmer.gif" 
+                  alt="No courses" 
+                  className="w-48 h-48 mx-auto rounded-lg"
+                />
+              </div>
               <h3 className="text-4xl font-game text-white mb-4">No Courses Available</h3>
               <p className="text-xl text-gray-400 mb-8 max-w-md mx-auto">
                 We're working hard to bring you amazing courses. Check back soon!

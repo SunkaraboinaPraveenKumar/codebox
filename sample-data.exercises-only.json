@@ -1,0 +1,697 @@
+{
+  "courses": [
+    {
+      "courseId": 1,
+      "title": "HTML Beginner",
+      "exerciseId": "html-headings",
+      "exerciseName": "HTML Headings",
+      "exerciseContent": {
+        "content": "<h2>HTML Headings 📝</h2><p>Headings allow you to structure your content hierarchically. HTML offers six levels, from <code>&lt;h1&gt;</code> (most important) to <code>&lt;h6&gt;</code> (least important).</p><h3>Why are they important?</h3><ul><li><strong>SEO:</strong> Search engines use headings to understand your page structure.</li><li><strong>Accessibility:</strong> Screen readers use them to navigate content.</li><li><strong>Visuals:</strong> Browsers apply default sizing (big to small).</li></ul><p><em>Note: Only use one <code>&lt;h1&gt;</code> per page for the main title!</em></p>",
+        "task": "<p><strong>Your Task:</strong></p><p>Let's build a structure for a news article.</p><ol><li>Change the text inside the <code>&lt;h1&gt;</code> to 'Daily News'.</li><li>Add an <code>&lt;h2&gt;</code> tag below it with the text 'Breaking Story'.</li><li>Add an <code>&lt;h3&gt;</code> tag below that with the text 'Local Updates'.</li></ol>",
+        "hint": "<p>💡 <strong>Hint:</strong> Your code should look like a ladder: <code>&lt;h1&gt;</code> first, then <code>&lt;h2&gt;</code>, then <code>&lt;h3&gt;</code>. Don't forget the closing tags like <code>&lt;/h2&gt;</code>!</p>",
+        "hintXp": 5,
+        "starterCode": {
+          "/index.html": {
+            "code": "<!DOCTYPE html>\n<html>\n<body>\n  \n  <h1>Title Here</h1>\n  \n</body>\n</html>"
+          }
+        },
+        "output": "A page displaying 'Daily News' (large), 'Breaking Story' (medium), and 'Local Updates' (small)",
+        "xp": 15
+      }
+    },
+    {
+      "courseId": 1,
+      "chapterId": 1,
+      "exerciseId": "paragraphs-and-text",
+      "exerciseName": "Paragraphs & Text Formatting",
+      "exerciseContent": {
+        "content": "<h2>Structuring Text ✍️</h2><p>The <code>&lt;p&gt;</code> tag defines a paragraph. It automatically adds space before and after the text.</p><h3>Formatting Text</h3><p>You can emphasize specific words inside a paragraph:</p><ul><li><code>&lt;strong&gt;</code>: Makes text <strong>bold</strong> (indicates importance).</li><li><code>&lt;em&gt;</code>: Makes text <em>italic</em> (indicates emphasis).</li><li><code>&lt;br&gt;</code>: Inserts a single line break (useful for poems or addresses).</li></ul>",
+        "task": "<p><strong>Your Task:</strong></p><ol><li>Create a <code>&lt;p&gt;</code> tag with the text: 'I love coding.'</li><li>Wrap the word 'love' in a <code>&lt;strong&gt;</code> tag.</li><li>Create a second <code>&lt;p&gt;</code> tag with the text: 'HTML is fun!'</li><li>Wrap 'fun' in an <code>&lt;em&gt;</code> tag.</li></ol>",
+        "hint": "<p>💡 <strong>Hint:</strong> Nesting tags looks like this: <code>&lt;p&gt;This is &lt;strong&gt;bold&lt;/strong&gt; text.&lt;/p&gt;</code></p>",
+        "hintXp": 5,
+        "starterCode": {
+          "/index.html": {
+            "code": "<body>\n  \n  \n</body>"
+          }
+        },
+        "output": "Two paragraphs with bold and italicized words respectively",
+        "xp": 15
+      }
+    },
+    {
+      "courseId": 1,
+      "chapterId": 2,
+      "exerciseId": "links-and-anchors",
+      "exerciseName": "Links & Anchors",
+      "exerciseContent": {
+        "content": "<h2>Connecting the Web 🔗</h2><p>The <code>&lt;a&gt;</code> (anchor) tag creates hyperlinks. The most important attribute is <code>href</code>, which tells the browser where the link goes.</p><pre><code>&lt;a href=\"https://google.com\"&gt;Go to Google&lt;/a&gt;</code></pre><p>To open a link in a new tab, add <code>target=\"_blank\"</code>.</p>",
+        "task": "<p><strong>Your Task:</strong></p><p>Create a navigation list:</p><ol><li>Create a link to 'https://www.google.com' with the text 'Search'.</li><li>Make the Google link open in a new tab.</li><li>Create a second link to 'contact.html' with the text 'Contact Us'.</li></ol>",
+        "hint": "<p>💡 <strong>Hint:</strong> The syntax is <code>&lt;a href=\"url\" target=\"_blank\"&gt;Link Text&lt;/a&gt;</code>.</p>",
+        "hintXp": 5,
+        "starterCode": {
+          "/index.html": {
+            "code": "<body>\n  <h2>My Links</h2>\n  \n  \n</body>"
+          }
+        },
+        "output": "Two clickable links, one opening in a new tab",
+        "xp": 20
+      }
+    },
+    {
+      "courseId": 1,
+      "chapterId": 2,
+      "exerciseId": "images-in-html",
+      "exerciseName": "Images in HTML",
+      "exerciseContent": {
+        "content": "<h2>A Picture is Worth 1000 Words 🖼️</h2><p>Use the <code>&lt;img&gt;</code> tag to embed images. It is a <strong>self-closing</strong> tag (no closing tag needed).</p><h3>Key Attributes:</h3><ul><li><code>src</code>: The source URL of the image.</li><li><code>alt</code>: Alternative text description (crucial for accessibility and if the image fails to load).</li></ul>",
+        "task": "<p><strong>Your Task:</strong></p><p>Add a cute coding mascot to the page.</p><ul><li>Use the <code>&lt;img&gt;</code> tag.</li><li>Set <code>src</code> to 'https://bit.ly/codebox-mascot'.</li><li>Set <code>alt</code> to 'A happy coding robot'.</li><li>Set the <code>width</code> attribute to '200'.</li></ul>",
+        "hint": "<p>💡 <strong>Hint:</strong> Remember, img tags don't have a closing &lt;/img&gt;. Just <code>&lt;img src=\"...\" alt=\"...\" /&gt;</code>.</p>",
+        "hintXp": 5,
+        "starterCode": {
+          "/index.html": {
+            "code": "<body>\n  <h1>Our Mascot</h1>\n  \n  \n</body>"
+          }
+        },
+        "output": "An image displayed on the page with width 200px",
+        "xp": 20
+      }
+    },
+    {
+      "courseId": 1,
+      "chapterId": 2,
+      "exerciseId": "lists",
+      "exerciseName": "Ordered & Unordered Lists",
+      "exerciseContent": {
+        "content": "<h2>Organizing Content with Lists 📋</h2><p>HTML offers two main types of lists:</p><ul><li><strong>Unordered List (`&lt;ul&gt;`):</strong> Uses bullet points. Good for grocery lists.</li><li><strong>Ordered List (`&lt;ol&gt;`):</strong> Uses numbers (1, 2, 3). Good for recipes or instructions.</li></ul><p>Both types use <code>&lt;li&gt;</code> (list item) tags for the actual items.</p>",
+        "task": "<p><strong>Your Task:</strong></p><ol><li>Create an <code>&lt;h3&gt;</code> named 'Shopping List'.</li><li>Below it, create a <code>&lt;ul&gt;</code> with 3 items: Milk, Eggs, Bread.</li><li>Create an <code>&lt;h3&gt;</code> named 'Top 3 Languages'.</li><li>Below it, create an <code>&lt;ol&gt;</code> with 3 items: HTML, CSS, JavaScript.</li></ol>",
+        "hint": "<p>💡 <strong>Hint:</strong> The <code>&lt;li&gt;</code> tags must go <em>inside</em> the <code>&lt;ul&gt;</code> or <code>&lt;ol&gt;</code> tags.</p>",
+        "hintXp": 5,
+        "starterCode": {
+          "/index.html": {
+            "code": "<body>\n  \n  \n</body>"
+          }
+        },
+        "output": "One bulleted list and one numbered list",
+        "xp": 25
+      }
+    },
+    {
+      "courseId": 1,
+      "chapterId": 2,
+      "exerciseId": "tables",
+      "exerciseName": "Data Tables",
+      "exerciseContent": {
+        "content": "<h2>Structuring Data 📊</h2><p>Tables allow you to arrange data into rows and columns.</p><h3>Table Structure:</h3><ul><li><code>&lt;table&gt;</code>: The wrapper.</li><li><code>&lt;tr&gt;</code>: Table Row.</li><li><code>&lt;th&gt;</code>: Table Header (bold and centered).</li><li><code>&lt;td&gt;</code>: Table Data (standard cell).</li></ul>",
+        "task": "<p><strong>Your Task:</strong></p><p>Create a table of employees.</p><ol><li>Create a <code>&lt;table&gt;</code>.</li><li>Add a first row (<code>&lt;tr&gt;</code>) with two headers (<code>&lt;th&gt;</code>): 'Name' and 'Role'.</li><li>Add a second row with data (<code>&lt;td&gt;</code>): 'Alice' and 'Developer'.</li><li>Add a third row with data: 'Bob' and 'Designer'.</li></ol>",
+        "hint": "<p>💡 <strong>Hint:</strong> Every row must be wrapped in <code>&lt;tr&gt;</code> tags. The first row usually contains <code>&lt;th&gt;</code>, subsequent rows contain <code>&lt;td&gt;</code>.</p>",
+        "hintXp": 5,
+        "starterCode": {
+          "/index.html": {
+            "code": "<body>\n  \n  \n</body>"
+          }
+        },
+        "output": "A 3-row table with headers and data cells",
+        "xp": 30
+      }
+    },
+    {
+      "courseId": 1,
+      "chapterId": 3,
+      "exerciseId": "basic-form",
+      "exerciseName": "Basic Forms",
+      "exerciseContent": {
+        "content": "<h2>Collecting User Input 📝</h2><p>Forms are how users interact with your website. The <code>&lt;form&gt;</code> element wraps all input controls.</p><p>Key elements:</p><ul><li><code>&lt;input&gt;</code>: Single line field (self-closing).</li><li><code>&lt;label&gt;</code>: Describes the input (for accessibility).</li><li><code>&lt;button&gt;</code>: Submits the form.</li></ul>",
+        "task": "<p><strong>Your Task:</strong></p><p>Create a login form:</p><ol><li>Create a <code>&lt;form&gt;</code> tag.</li><li>Inside, add a <code>&lt;label&gt;</code> with text 'Username:'.</li><li>Add an <code>&lt;input&gt;</code> of type 'text'.</li><li>Add a <code>&lt;button&gt;</code> with text 'Login'.</li></ol>",
+        "hint": "<p>💡 <strong>Hint:</strong> Inputs usually don't have text <em>inside</em> them. Use the placeholder attribute if you want hint text, or a label next to it.</p>",
+        "hintXp": 5,
+        "starterCode": {
+          "/index.html": {
+            "code": "<body>\n  <h2>Login</h2>\n  \n  \n</body>"
+          }
+        },
+        "output": "A functional form with a label, input field, and button",
+        "xp": 30
+      }
+    },
+    {
+      "courseId": 1,
+      "chapterId": 3,
+      "exerciseId": "form-inputs",
+      "exerciseName": "Input Types",
+      "exerciseContent": {
+        "content": "<h2>The Many Faces of Input 🎭</h2><p>The <code>type</code> attribute changes how an input behaves. Common types:</p><ul><li><code>text</code>: Standard text.</li><li><code>password</code>: Hides characters (***).</li><li><code>email</code>: Validates email format.</li><li><code>number</code>: Numeric input only.</li><li><code>date</code>: Date picker.</li></ul>",
+        "task": "<p><strong>Your Task:</strong></p><p>Enhance the registration form by adding these inputs inside the form:</p><ol><li>An input with type 'password' and placeholder 'Secret Code'.</li><li>An input with type 'email' and placeholder 'you@web.com'.</li><li>An input with type 'number' for Age.</li></ol>",
+        "hint": "<p>💡 <strong>Hint:</strong> Use the placeholder attribute to show ghost text inside the box: <code>&lt;input type=\"email\" placeholder=\"...\" /&gt;</code>.</p>",
+        "hintXp": 5,
+        "starterCode": {
+          "/index.html": {
+            "code": "<body>\n  <form>\n    <h3>Sign Up</h3>\n    <input type=\"text\" placeholder=\"Username\" /><br>\n    \n    \n    <button>Submit</button>\n  </form>\n</body>"
+          }
+        },
+        "output": "Form displaying password, email, and number inputs",
+        "xp": 35
+      }
+    },
+    {
+      "courseId": 1,
+      "chapterId": 3,
+      "exerciseId": "form-validation",
+      "exerciseName": "Form Validation",
+      "exerciseContent": {
+        "content": "<h2>Keep it Clean 🛡️</h2><p>HTML5 allows you to validate data <em>before</em> it is sent to a server using attributes:</p><ul><li><code>required</code>: The field cannot be empty.</li><li><code>min</code> / <code>max</code>: Limits for numbers.</li><li><code>minlength</code>: Minimum character count.</li></ul>",
+        "task": "<p><strong>Your Task:</strong></p><p>Secure the existing form:</p><ol><li>Make the Username <code>required</code>.</li><li>Set the Age input to have a <code>min</code> of 18 and <code>max</code> of 99.</li><li>Make the Password require a <code>minlength</code> of 8 characters.</li></ol>",
+        "hint": "<p>💡 <strong>Hint:</strong> These are attributes without values (booleans) or with values. Example: <code>&lt;input type=\"text\" required minlength=\"5\" /&gt;</code>.</p>",
+        "hintXp": 5,
+        "starterCode": {
+          "/index.html": {
+            "code": "<body>\n  <form>\n    Username: <input type=\"text\" name=\"user\" /><br>\n    Age: <input type=\"number\" name=\"age\" /><br>\n    Password: <input type=\"password\" name=\"pass\" /><br>\n    <button>Register</button>\n  </form>\n</body>"
+          }
+        },
+        "output": "Form that prevents submission if rules (like empty username or age < 18) are violated",
+        "xp": 40
+      }
+    },
+    {
+      "courseId": 1,
+      "chapterId": 4,
+      "exerciseId": "semantic-elements",
+      "exerciseName": "Semantic HTML",
+      "exerciseContent": {
+        "content": "<h2>Meaningful Markup 🧠</h2><p>Semantic elements describe <em>what</em> they are, not just how they look. This is vital for accessibility and SEO.</p><h3>Common Tags:</h3><ul><li><code>&lt;header&gt;</code>: Intro content or nav.</li><li><code>&lt;main&gt;</code>: The primary content.</li><li><code>&lt;footer&gt;</code>: Copyright, contact info.</li><li><code>&lt;article&gt;</code>: Independent content (blog post).</li></ul>",
+        "task": "<p><strong>Your Task:</strong></p><p>Replace the generic <code>&lt;div&gt;</code> tags in the starter code with the correct semantic tags: <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, and <code>&lt;footer&gt;</code>.</p>",
+        "hint": "<p>💡 <strong>Hint:</strong> Look at the IDs on the divs (id=\"header\") to guess which semantic tag to use.</p>",
+        "hintXp": 5,
+        "starterCode": {
+          "/index.html": {
+            "code": "<body>\n  <div id=\"header\">\n    <h1>My Website</h1>\n  </div>\n  \n  <div id=\"main\">\n    <p>Welcome to my semantic page.</p>\n  </div>\n\n  <div id=\"footer\">\n    <p>&copy; 2023 Me</p>\n  </div>\n</body>"
+          }
+        },
+        "output": "Code structure using header, main, and footer tags instead of divs",
+        "xp": 35
+      }
+    },
+    {
+      "courseId": 1,
+      "chapterId": 4,
+      "exerciseId": "html5-layout",
+      "exerciseName": "Full HTML5 Layout",
+      "exerciseContent": {
+        "content": "<h2>Building the Big Picture 🏗️</h2><p>A professional webpage combines semantic tags to create a standard layout.</p><ul><li><code>&lt;nav&gt;</code>: For navigation links.</li><li><code>&lt;section&gt;</code>: Thematic grouping of content.</li><li><code>&lt;aside&gt;</code>: Sidebar content (ads, related links).</li></ul>",
+        "task": "<p><strong>Your Task:</strong></p><p>Build a blog layout structure inside the <code>&lt;body&gt;</code>:</p><ol><li>A <code>&lt;header&gt;</code> containing a <code>&lt;nav&gt;</code>.</li><li>A <code>&lt;main&gt;</code> area.</li><li>Inside main, an <code>&lt;article&gt;</code> and an <code>&lt;aside&gt;</code>.</li><li>A <code>&lt;footer&gt;</code> at the bottom.</li></ol>",
+        "hint": "<p>💡 <strong>Hint:</strong> Think of it as boxes inside boxes. The Article and Aside sit side-by-side (conceptually) inside the Main box.</p>",
+        "hintXp": 5,
+        "starterCode": {
+          "/index.html": {
+            "code": "<body>\n  \n\n</body>"
+          }
+        },
+        "output": "A complete semantic document structure",
+        "xp": 40
+      }
+    },
+    {
+      "courseId": 2,
+      "chapterId": 1,
+      "exerciseId": "your-first-css",
+      "exerciseName": "Your First CSS",
+      "exerciseContent": {
+        "content": "<h2>Introduction to CSS 🎨</h2><p>CSS (Cascading Style Sheets) controls the look of your HTML.</p><h3>Syntax:</h3><pre><code>selector {\n  property: value;\n}</code></pre><p>Example: <code>h1 { color: red; }</code> turns all h1 headings red.</p>",
+        "task": "<p><strong>Your Task:</strong></p><p>Style the page in the <code>styles.css</code> file:</p><ol><li>Select the <code>h1</code> tag.</li><li>Set its <code>color</code> to <code>blue</code>.</li><li>Select the <code>p</code> tag.</li><li>Set its <code>color</code> to <code>green</code>.</li></ol>",
+        "hint": "<p>💡 <strong>Hint:</strong> Make sure to write your code in the <code>styles.css</code> tab, not the HTML file!</p>",
+        "hintXp": 5,
+        "starterCode": {
+          "/index.html": {
+            "code": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"styles.css\">\n</head>\n<body>\n  <h1>Hello CSS</h1>\n  <p>Making things pretty.</p>\n</body>\n</html>"
+          },
+          "/styles.css": {
+            "code": "/* Write your CSS here */\n"
+          }
+        },
+        "output": "Blue heading and green paragraph",
+        "xp": 20
+      }
+    },
+    {
+      "courseId": 2,
+      "chapterId": 1,
+      "exerciseId": "css-selectors",
+      "exerciseName": "CSS Selectors",
+      "exerciseContent": {
+        "content": "<h2>Targeting Elements 🎯</h2><p>You can target elements in three main ways:</p><ul><li><strong>Type:</strong> <code>p {}</code> (Targets all paragraphs)</li><li><strong>Class:</strong> <code>.classname {}</code> (Targets reusable groups)</li><li><strong>ID:</strong> <code>#idname {}</code> (Targets a unique element)</li></ul><p><em>Classes use a dot, IDs use a hash.</em></p>",
+        "task": "<p><strong>Your Task:</strong></p><ol><li>In <code>styles.css</code>, select the class <code>.highlight</code> and set <code>background-color: yellow</code>.</li><li>Select the ID <code>#unique</code> and set <code>color: red</code>.</li></ol>",
+        "hint": "<p>💡 <strong>Hint:</strong> In HTML, the class is defined as <code>class=\"highlight\"</code>, but in CSS you select it as <code>.highlight</code>.</p>",
+        "hintXp": 5,
+        "starterCode": {
+          "/index.html": {
+            "code": "<body>\n  <p class=\"highlight\">This is important.</p>\n  <p>This is normal.</p>\n  <p id=\"unique\">This is unique.</p>\n</body>"
+          },
+          "/styles.css": {
+            "code": "/* Target the class and ID below */\n"
+          }
+        },
+        "output": "Yellow background on one paragraph, red text on another",
+        "xp": 25
+      }
+    },
+    {
+      "courseId": 2,
+      "chapterId": 1,
+      "exerciseId": "colors-backgrounds",
+      "exerciseName": "Colors & Backgrounds",
+      "exerciseContent": {
+        "content": "<h2>Painting the Web 🖌️</h2><p>CSS supports color names ('red'), Hex codes ('#FF0000'), and RGB values.</p><h3>Properties:</h3><ul><li><code>color</code>: Changes text color.</li><li><code>background-color</code>: Changes the background.</li></ul>",
+        "task": "<p><strong>Your Task:</strong></p><p>Make the card look nice:</p><ol><li>Select the <code>.card</code> class.</li><li>Give it a <code>background-color</code> of <code>#f0f0f0</code> (light gray).</li><li>Give it a text <code>color</code> of <code>#333333</code> (dark gray).</li></ol>",
+        "hint": "<p>💡 <strong>Hint:</strong> Hex codes always start with a <code>#</code>. Don't forget the semicolon at the end of the line!</p>",
+        "hintXp": 5,
+        "starterCode": {
+          "/index.html": {
+            "code": "<div class=\"card\">\n  <h2>User Profile</h2>\n  <p>Welcome back!</p>\n</div>"
+          },
+          "/styles.css": {
+            "code": ".card {\n  /* Add colors here */\n  padding: 20px;\n}"
+          }
+        },
+        "output": "A light gray card with dark gray text",
+        "xp": 20
+      }
+    },
+    {
+      "courseId": 2,
+      "chapterId": 1,
+      "exerciseId": "text-styling",
+      "exerciseName": "Typography",
+      "exerciseContent": {
+        "content": "<h2>Styling Text 🅰️</h2><p>Make your text readable and stylish.</p><ul><li><code>font-family</code>: The font type (Arial, serif, monospace).</li><li><code>font-size</code>: Size of text (px, rem).</li><li><code>font-weight</code>: Thickness (bold, normal, 400, 700).</li><li><code>text-align</code>: Alignment (left, center, right).</li></ul>",
+        "task": "<p><strong>Your Task:</strong></p><p>Style the <code>h1</code> heading:</p><ol><li>Set font to <code>sans-serif</code>.</li><li>Set size to <code>36px</code>.</li><li>Align it to the <code>center</code>.</li></ol>",
+        "hint": "<p>💡 <strong>Hint:</strong> The property is <code>text-align</code>, not just 'align'.</p>",
+        "hintXp": 5,
+        "starterCode": {
+          "/index.html": {
+            "code": "<h1>Headline</h1>\n<p>Content goes here.</p>"
+          },
+          "/styles.css": {
+            "code": "h1 {\n  /* Add styles here */\n}"
+          }
+        },
+        "output": "Centered, large, sans-serif heading",
+        "xp": 20
+      }
+    },
+    {
+      "courseId": 2,
+      "chapterId": 2,
+      "exerciseId": "box-model",
+      "exerciseName": "The Box Model",
+      "exerciseContent": {
+        "content": "<h2>Everything is a Box 📦</h2><p>Every element in HTML is a box wrapped in layers:</p><ol><li><strong>Content:</strong> The actual text/image.</li><li><strong>Padding:</strong> Space <em>inside</em> the border.</li><li><strong>Border:</strong> The line around the padding.</li><li><strong>Margin:</strong> Space <em>outside</em> the border.</li></ol>",
+        "task": "<p><strong>Your Task:</strong></p><p>Define the box model for the <code>.box</code> div:</p><ol><li>Add a <code>5px solid black</code> border.</li><li>Add <code>20px</code> of padding.</li><li>Add <code>30px</code> of margin.</li></ol>",
+        "hint": "<p>💡 <strong>Hint:</strong> Border syntax is shorthand: <code>width style color</code>.</p>",
+        "hintXp": 5,
+        "starterCode": {
+          "/index.html": {
+            "code": "<div class=\"box\">I am a box</div>\n<div class=\"box\">I am another box</div>"
+          },
+          "/styles.css": {
+            "code": ".box {\n  background-color: lightblue;\n  /* Add box model properties here */\n}"
+          }
+        },
+        "output": "Two blue boxes separated by space, with internal spacing and borders",
+        "xp": 30
+      }
+    },
+    {
+      "courseId": 2,
+      "chapterId": 2,
+      "exerciseId": "margins-padding",
+      "exerciseName": "Margins & Padding",
+      "exerciseContent": {
+        "content": "<h2>Spacing in Depth 📏</h2><p>You can control specific sides of an element.</p><ul><li><code>padding-top</code>, <code>margin-left</code>, etc.</li><li>Shorthand: <code>margin: 10px 20px;</code> (10px Top/Bottom, 20px Left/Right).</li></ul><p><strong>Centering:</strong> To center a block element horizontally, use <code>margin: 0 auto;</code> (requires a width).</p>",
+        "task": "<p><strong>Your Task:</strong></p><p>Center the container:</p><ol><li>Give <code>.container</code> a width of <code>300px</code>.</li><li>Center it using <code>margin: 0 auto</code>.</li><li>Give it <code>20px</code> padding on all sides.</li></ol>",
+        "hint": "<p>💡 <strong>Hint:</strong> <code>0 auto</code> means 0 margin on top/bottom, and automatic margin on left/right (which centers it).</p>",
+        "hintXp": 5,
+        "starterCode": {
+          "/index.html": {
+            "code": "<div class=\"container\">\n  <p>I am centered content.</p>\n</div>"
+          },
+          "/styles.css": {
+            "code": ".container {\n  background-color: pink;\n  /* Add spacing rules here */\n}"
+          }
+        },
+        "output": "A pink box centered horizontally in the preview window",
+        "xp": 25
+      }
+    },
+    {
+      "courseId": 2,
+      "chapterId": 2,
+      "exerciseId": "display-properties",
+      "exerciseName": "Display Properties",
+      "exerciseContent": {
+        "content": "<h2>Block vs. Inline 🧱</h2><p>The <code>display</code> property controls behavior:</p><ul><li><code>block</code>: Takes full width, starts new line (e.g., div, p).</li><li><code>inline</code>: Takes only needed width, no height/width setting (e.g., span, a).</li><li><code>inline-block</code>: Flows like text, but allows height/width.</li><li><code>none</code>: Hides the element completely.</li></ul>",
+        "task": "<p><strong>Your Task:</strong></p><ol><li>Change the list items <code>li</code> to <code>display: inline-block</code> to make a horizontal menu.</li><li>Set the class <code>.hidden-msg</code> to <code>display: none</code>.</li></ol>",
+        "hint": "<p>💡 <strong>Hint:</strong> By default, list items are block elements (vertical). Changing them to inline-block makes them sit side-by-side.</p>",
+        "hintXp": 5,
+        "starterCode": {
+          "/index.html": {
+            "code": "<ul>\n  <li>Home</li>\n  <li>About</li>\n  <li>Contact</li>\n</ul>\n<div class=\"hidden-msg\">You shouldn't see me!</div>"
+          },
+          "/styles.css": {
+            "code": "li {\n  background: #ddd;\n  padding: 10px;\n  /* Change display here */\n}\n\n.hidden-msg {\n  /* Hide this */\n}"
+          }
+        },
+        "output": "Horizontal menu items and hidden text",
+        "xp": 30
+      }
+    },
+    {
+      "courseId": 2,
+      "chapterId": 2,
+      "exerciseId": "positioning",
+      "exerciseName": "Positioning",
+      "exerciseContent": {
+        "content": "<h2>Precise Placement 📍</h2><p>The <code>position</code> property breaks elements out of normal flow.</p><ul><li><code>relative</code>: Offset from its normal spot.</li><li><code>absolute</code>: Positioned relative to the nearest positioned ancestor.</li><li><code>fixed</code>: Stays in place when scrolling.</li></ul>",
+        "task": "<p><strong>Your Task:</strong></p><p>Create a notification badge.</p><ol><li>Set <code>.container</code> to <code>position: relative</code>.</li><li>Set <code>.badge</code> to <code>position: absolute</code>.</li><li>Move the badge to the top right corner: <code>top: 0</code>, <code>right: 0</code>.</li></ol>",
+        "hint": "<p>💡 <strong>Hint:</strong> Absolute items look for the nearest parent with 'relative' (or absolute/fixed) position to use as their anchor point.</p>",
+        "hintXp": 5,
+        "starterCode": {
+          "/index.html": {
+            "code": "<div class=\"container\">\n  <button>Messages</button>\n  <div class=\"badge\">1</div>\n</div>"
+          },
+          "/styles.css": {
+            "code": ".container {\n  display: inline-block;\n  /* Set position relative here */\n}\n\n.badge {\n  background: red;\n  color: white;\n  width: 20px;\n  height: 20px;\n  text-align: center;\n  border-radius: 50%;\n  /* Set position absolute here */\n}"
+          }
+        },
+        "output": "A button with a red notification badge on its top-right corner",
+        "xp": 35
+      }
+    },
+    {
+      "courseId": 2,
+      "chapterId": 3,
+      "exerciseId": "flexbox-basics",
+      "exerciseName": "Flexbox Basics",
+      "exerciseContent": {
+        "content": "<h2>Flexbox Layout 💪</h2><p>Flexbox is a one-dimensional layout method. To start, add <code>display: flex</code> to a parent container.</p><h3>Main Axis alignment (justify-content):</h3><ul><li><code>flex-start</code> (default)</li><li><code>center</code></li><li><code>space-between</code></li><li><code>flex-end</code></li></ul>",
+        "task": "<p><strong>Your Task:</strong></p><p>Arrange the navigation items.</p><ol><li>Set <code>.nav-bar</code> to <code>display: flex</code>.</li><li>Space them out evenly using <code>justify-content: space-between</code>.</li><li>Align them vertically using <code>align-items: center</code>.</li></ol>",
+        "hint": "<p>💡 <strong>Hint:</strong> <code>justify-content</code> works on the main axis (horizontal usually), <code>align-items</code> works on the cross axis (vertical).</p>",
+        "hintXp": 5,
+        "starterCode": {
+          "/index.html": {
+            "code": "<div class=\"nav-bar\">\n  <div>Logo</div>\n  <div>Link 1</div>\n  <div>Link 2</div>\n</div>"
+          },
+          "/styles.css": {
+            "code": ".nav-bar {\n  background: #eee;\n  height: 50px;\n  padding: 0 20px;\n  /* Add flex properties here */\n}"
+          }
+        },
+        "output": "Items spread across the bar with the Logo on left and Link 2 on right",
+        "xp": 40
+      }
+    },
+    {
+      "courseId": 2,
+      "chapterId": 3,
+      "exerciseId": "flexbox-layout",
+      "exerciseName": "Advanced Flexbox",
+      "exerciseContent": {
+        "content": "<h2>Wrapping and Growing 🌱</h2><p>By default, flex items try to fit on one line. Use <code>flex-wrap: wrap</code> to allow them to break to new lines.</p><p>Use <code>flex: 1</code> on a child to make it grow to fill available space.</p>",
+        "task": "<p><strong>Your Task:</strong></p><p>Build a sidebar layout.</p><ol><li>Set <code>.container</code> to <code>display: flex</code>.</li><li>Give <code>.sidebar</code> a width of <code>200px</code>.</li><li>Give <code>.content</code> the property <code>flex: 1</code> so it takes the remaining space.</li></ol>",
+        "hint": "<p>💡 <strong>Hint:</strong> <code>flex: 1</code> is a magic shortcut that makes an element 'greedy'—it eats up all empty space.</p>",
+        "hintXp": 5,
+        "starterCode": {
+          "/index.html": {
+            "code": "<div class=\"container\">\n  <div class=\"sidebar\">Sidebar</div>\n  <div class=\"content\">Main Content Area</div>\n</div>"
+          },
+          "/styles.css": {
+            "code": ".container {\n  /* Flex parent */\n}\n\n.sidebar {\n  background: #ccc;\n}\n\n.content {\n  background: #f9f9f9;\n}"
+          }
+        },
+        "output": "A fixed-width sidebar next to a content area that fills the screen",
+        "xp": 45
+      }
+    },
+    {
+      "courseId": 2,
+      "chapterId": 3,
+      "exerciseId": "css-grid-basics",
+      "exerciseName": "CSS Grid Basics",
+      "exerciseContent": {
+        "content": "<h2>2D Layouts with Grid 🕸️</h2><p>CSS Grid handles both rows and columns simultaneously.</p><pre><code>.container {\n  display: grid;\n  grid-template-columns: 100px 100px 100px;\n  grid-gap: 10px;\n}</code></pre><p>Use <code>1fr</code> (fraction) to create flexible columns.</p>",
+        "task": "<p><strong>Your Task:</strong></p><p>Create a 3-column photo gallery.</p><ol><li>Set <code>.gallery</code> to <code>display: grid</code>.</li><li>Create 3 equal columns using <code>grid-template-columns: 1fr 1fr 1fr</code>.</li><li>Add a <code>20px</code> gap between items using <code>grid-gap</code>.</li></ol>",
+        "hint": "<p>💡 <strong>Hint:</strong> <code>1fr</code> means 'one part of the available space'. Three columns of <code>1fr</code> means each takes 33%.</p>",
+        "hintXp": 5,
+        "starterCode": {
+          "/index.html": {
+            "code": "<div class=\"gallery\">\n  <div>Img 1</div>\n  <div>Img 2</div>\n  <div>Img 3</div>\n</div>"
+          },
+          "/styles.css": {
+            "code": ".gallery {\n  /* Add grid properties here */\n}\n.gallery div {\n  background: orange;\n  height: 100px;\n}"
+          }
+        },
+        "output": "Three orange boxes in a row with spacing between them",
+        "xp": 50
+      }
+    },
+    {
+      "courseId": 2,
+      "chapterId": 4,
+      "exerciseId": "media-queries",
+      "exerciseName": "Media Queries",
+      "exerciseContent": {
+        "content": "<h2>Responsive Design 📱</h2><p>Media queries apply CSS only when specific conditions (like screen size) are met.</p><pre><code>@media (max-width: 600px) {\n  body {\n    background: blue;\n  }\n}</code></pre>",
+        "task": "<p><strong>Your Task:</strong></p><p>Change the layout for mobile devices.</p><ol><li>Write a media query for screens with a <code>max-width</code> of <code>500px</code>.</li><li>Inside the query, target <code>.container</code>.</li><li>Change its <code>flex-direction</code> to <code>column</code>.</li></ol>",
+        "hint": "<p>💡 <strong>Hint:</strong> Ensure your braces <code>{ }</code> are correct. One set for the @media, and one set for the .container inside it.</p>",
+        "hintXp": 5,
+        "starterCode": {
+          "/index.html": {
+            "code": "<div class=\"container\">\n  <div class=\"box\">A</div>\n  <div class=\"box\">B</div>\n</div>"
+          },
+          "/styles.css": {
+            "code": ".container {\n  display: flex;\n  flex-direction: row;\n}\n.box { width: 100%; height: 50px; border: 1px solid black; }\n\n/* Add media query below */\n"
+          }
+        },
+        "output": "Boxes stack vertically when the preview window is narrow",
+        "xp": 40
+      }
+    },
+    {
+      "courseId": 2,
+      "chapterId": 4,
+      "exerciseId": "mobile-first",
+      "exerciseName": "Mobile First Design",
+      "exerciseContent": {
+        "content": "<h2>Small Screens First 📲</h2><p>Mobile-first means writing CSS for mobile devices by default, then using <code>min-width</code> media queries to add complexity for larger screens.</p>",
+        "task": "<p><strong>Your Task:</strong></p><ol><li>Set the default <code>font-size</code> of <code>h1</code> to <code>20px</code> (for mobile).</li><li>Create a media query for <code>min-width: 768px</code>.</li><li>Inside it, set <code>h1</code> font-size to <code>40px</code> (for desktop).</li></ol>",
+        "hint": "<p>💡 <strong>Hint:</strong> <code>min-width</code> means 'apply this style if the screen is AT LEAST this wide'.</p>",
+        "hintXp": 5,
+        "starterCode": {
+          "/index.html": {
+            "code": "<h1>Responsive Text</h1>"
+          },
+          "/styles.css": {
+            "code": "/* Mobile styles (default) */\nh1 {\n  color: navy;\n}\n\n/* Desktop styles */\n"
+          }
+        },
+        "output": "Text gets larger as you widen the preview window",
+        "xp": 45
+      }
+    },
+    {
+      "courseId": 2,
+      "chapterId": 4,
+      "exerciseId": "css-animations",
+      "exerciseName": "CSS Animations",
+      "exerciseContent": {
+        "content": "<h2>Bringing it to Life ✨</h2><p>You can animate elements using <code>@keyframes</code>.</p><pre><code>@keyframes slide {\n  from { left: 0; }\n  to { left: 100px; }\n}</code></pre><p>Then apply it: <code>animation: slide 2s infinite;</code></p>",
+        "task": "<p><strong>Your Task:</strong></p><p>Make the ball bounce.</p><ol><li>Define <code>@keyframes bounce</code>.</li><li>At <code>0%</code> set <code>transform: translateY(0)</code>.</li><li>At <code>50%</code> set <code>transform: translateY(-50px)</code>.</li><li>At <code>100%</code> set <code>transform: translateY(0)</code>.</li><li>Apply <code>animation: bounce 1s infinite</code> to the <code>.ball</code>.</li></ol>",
+        "hint": "<p>💡 <strong>Hint:</strong> translateY moves items up (negative) and down (positive).</p>",
+        "hintXp": 5,
+        "starterCode": {
+          "/index.html": {
+            "code": "<div class=\"ball\"></div>"
+          },
+          "/styles.css": {
+            "code": ".ball {\n  width: 50px;\n  height: 50px;\n  background: red;\n  border-radius: 50%;\n  /* Add animation property here */\n}\n\n/* Define keyframes here */\n"
+          }
+        },
+        "output": "A red ball moving up and down continuously",
+        "xp": 50
+      }
+    },
+    {
+      "courseId": 3,
+      "chapterId": 1,
+      "exerciseId": "your-first-javascript",
+      "exerciseName": "Your First JavaScript",
+      "exerciseContent": {
+        "content": "<h2>Hello World 🌍</h2><p>JavaScript makes pages interactive. We often use <code>console.log()</code> to print messages to the browser's developer tools for testing.</p>",
+        "task": "<p><strong>Your Task:</strong></p><p>In the <code>script.js</code> file:</p><ol><li>Write <code>console.log('Hello Codebox');</code></li><li>Write <code>console.log(10 + 5);</code></li></ol>",
+        "hint": "<p>💡 <strong>Hint:</strong> Don't forget the quotes for text strings! Numbers don't need quotes.</p>",
+        "hintXp": 5,
+        "starterCode": {
+          "/index.html": {
+            "code": "<body>\n  <h1>Check the Console</h1>\n  <script src=\"script.js\"></script>\n</body>"
+          },
+          "/script.js": {
+            "code": "// Write your code below\n"
+          }
+        },
+        "output": "Output 'Hello Codebox' and '15' in the console",
+        "xp": 25
+      }
+    },
+    {
+      "courseId": 3,
+      "chapterId": 1,
+      "exerciseId": "variables-data-types",
+      "exerciseName": "Variables & Types",
+      "exerciseContent": {
+        "content": "<h2>Storing Data 💾</h2><p>Use variables to remember values.</p><ul><li><code>let</code>: For values that can change.</li><li><code>const</code>: For values that stay the same.</li></ul><p><strong>Types:</strong> String ('Text'), Number (42), Boolean (true/false).</p>",
+        "task": "<p><strong>Your Task:</strong></p><ol><li>Create a <code>const</code> named <code>appName</code> with value 'Codebox'.</li><li>Create a <code>let</code> named <code>score</code> with value <code>0</code>.</li><li>Update <code>score</code> to be <code>10</code>.</li><li>Log both to the console.</li></ol>",
+        "hint": "<p>💡 <strong>Hint:</strong> You don't use 'let' again when updating a variable. Just <code>score = 10;</code>.</p>",
+        "hintXp": 5,
+        "starterCode": {
+          "/index.html": {
+            "code": "<body><script src=\"script.js\"></script></body>"
+          },
+          "/script.js": {
+            "code": "// Declare variables here\n"
+          }
+        },
+        "output": "Console logs 'Codebox' and '10'",
+        "xp": 30
+      }
+    },
+    {
+      "courseId": 3,
+      "chapterId": 1,
+      "exerciseId": "operators",
+      "exerciseName": "JS Operators",
+      "exerciseContent": {
+        "content": "<h2>Math & Logic 🧮</h2><p>JavaScript supports standard math (<code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>) and comparison operators.</p><ul><li><code>===</code>: Equal to (strict).</li><li><code>!==</code>: Not equal to.</li><li><code>></code> / <code><</code>: Greater/Less than.</li></ul>",
+        "task": "<p><strong>Your Task:</strong></p><ol><li>Create a variable <code>total</code> that equals <code>100 + 50</code>.</li><li>Create a variable <code>isWinner</code> that checks if <code>total > 140</code>.</li><li>Log <code>isWinner</code> (it should be true).</li></ol>",
+        "hint": "<p>💡 <strong>Hint:</strong> Comparison operators return a boolean (true or false).</p>",
+        "hintXp": 5,
+        "starterCode": {
+          "/index.html": {
+            "code": "<body><script src=\"script.js\"></script></body>"
+          },
+          "/script.js": {
+            "code": "// Perform calculations here\n"
+          }
+        },
+        "output": "Console logs 'true'",
+        "xp": 25
+      }
+    },
+    {
+      "courseId": 3,
+      "chapterId": 1,
+      "exerciseId": "console-debugging",
+      "exerciseName": "Debugging",
+      "exerciseContent": {
+        "content": "<h2>Fixing Bugs 🐞</h2><p>Things break. The console is your best friend. Besides <code>log</code>, you can use:</p><ul><li><code>console.warn()</code>: Prints a yellow warning.</li><li><code>console.error()</code>: Prints a red error.</li></ul>",
+        "task": "<p><strong>Your Task:</strong></p><p>Simulate an application status:</p><ol><li>Log 'System starting...'</li><li>Warn 'Low memory'</li><li>Error 'System crash!'</li></ol>",
+        "hint": "<p>💡 <strong>Hint:</strong> Use the different methods exactly like console.log.</p>",
+        "hintXp": 5,
+        "starterCode": {
+          "/index.html": {
+            "code": "<body><script src=\"script.js\"></script></body>"
+          },
+          "/script.js": {
+            "code": "// Debug here\n"
+          }
+        },
+        "output": "A normal log, a yellow warning, and a red error in the console",
+        "xp": 20
+      }
+    },
+    {
+      "courseId": 4,
+      "chapterId": 1,
+      "exerciseId": "first-react-component",
+      "exerciseName": "First React Component",
+      "exerciseContent": {
+        "content": "<h2>Thinking in Components ⚛️</h2><p>React apps are built of components. A component is just a JavaScript function that returns HTML (called JSX).</p><pre><code>function Welcome() {\n  return &lt;h1&gt;Hello!&lt;/h1&gt;;\n}</code></pre>",
+        "task": "<p><strong>Your Task:</strong></p><ol><li>Inside <code>App.js</code>, change the <code>App</code> function.</li><li>Make it return an <code>&lt;h1&gt;</code> that says 'My React App'.</li><li>Add a <code>&lt;p&gt;</code> below it saying 'Components are cool'.</li></ol>",
+        "hint": "<p>💡 <strong>Hint:</strong> If returning multiple lines, wrap them in a <code>&lt;div&gt;</code> or fragment <code>&lt;&gt;...&lt;/&gt;</code>.</p>",
+        "hintXp": 5,
+        "starterCode": {
+          "/App.js": {
+            "code": "export default function App() {\n  return (\n    <div>\n      \n      <h1>Hello World</h1>\n    </div>\n  );\n}"
+          },
+          "/index.js": {
+            "code": "import { StrictMode } from \"react\";\nimport { createRoot } from \"react-dom/client\";\nimport App from \"./App\";\n\nconst rootElement = document.getElementById(\"root\");\nconst root = createRoot(rootElement);\nroot.render(<StrictMode><App /></StrictMode>);"
+          }
+        },
+        "output": "React renders a Heading and a Paragraph",
+        "xp": 30
+      }
+    },
+    {
+      "courseId": 4,
+      "chapterId": 1,
+      "exerciseId": "jsx-syntax",
+      "exerciseName": "JSX Syntax",
+      "exerciseContent": {
+        "content": "<h2>JSX: JS + XML 🧬</h2><p>JSX allows you to write HTML in JS. But it's smarter.</p><p>You can embed variables using curly braces <code>{}</code>.</p><pre><code>const name = \"Alice\";\nreturn &lt;h1&gt;Hello {name}&lt;/h1&gt;;</code></pre>",
+        "task": "<p><strong>Your Task:</strong></p><ol><li>Create a constant <code>user</code> with your name.</li><li>Inside the return statement, display 'Welcome, [your name]' using the variable.</li><li>Perform math inside curly braces to display '2 + 2 is {2 + 2}'.</li></ol>",
+        "hint": "<p>💡 <strong>Hint:</strong> Anything inside <code>{}</code> is executed as JavaScript.</p>",
+        "hintXp": 5,
+        "starterCode": {
+          "/App.js": {
+            "code": "export default function App() {\n  // Create variable here\n  \n  return (\n    <div>\n      <h1>Welcome Message</h1>\n      <p>Math result here</p>\n    </div>\n  );\n}"
+          },
+          "/index.js": {
+            "code": "import { StrictMode } from \"react\";\nimport { createRoot } from \"react-dom/client\";\nimport App from \"./App\";\n\nconst rootElement = document.getElementById(\"root\");\nconst root = createRoot(rootElement);\nroot.render(<StrictMode><App /></StrictMode>);"
+          }
+        },
+        "output": "Displays 'Welcome [Name]' and '2 + 2 is 4'",
+        "xp": 35
+      }
+    },
+    {
+      "courseId": 4,
+      "chapterId": 1,
+      "exerciseId": "props",
+      "exerciseName": "Props",
+      "exerciseContent": {
+        "content": "<h2>Passing Data with Props 🚚</h2><p>Props (properties) allow you to pass data from a parent component to a child.</p><pre><code>function Welcome(props) {\n  return &lt;h1&gt;Hello, {props.name}&lt;/h1&gt;;\n}</code></pre><p>Usage: <code>&lt;Welcome name=\"Alice\" /&gt;</code></p>",
+        "task": "<p><strong>Your Task:</strong></p><ol><li>Look at the <code>Greeting</code> component defined at the top.</li><li>In the <code>App</code> component, render <code>Greeting</code> three times.</li><li>Pass a different <code>name</code> prop to each one (e.g., 'Alice', 'Bob', 'Charlie').</li></ol>",
+        "hint": "<p>💡 <strong>Hint:</strong> You use components like HTML tags: <code>&lt;Greeting name=\"...\" /&gt;</code>.</p>",
+        "hintXp": 5,
+        "starterCode": {
+          "/App.js": {
+            "code": "function Greeting(props) {\n  return <h2>Hello, {props.name}!</h2>;\n}\n\nexport default function App() {\n  return (\n    <div>\n      <h1>Team Members:</h1>\n      \n      \n    </div>\n  );\n}"
+          },
+          "/index.js": {
+            "code": "import { StrictMode } from \"react\";\nimport { createRoot } from \"react-dom/client\";\nimport App from \"./App\";\n\nconst rootElement = document.getElementById(\"root\");\nconst root = createRoot(rootElement);\nroot.render(<StrictMode><App /></StrictMode>);"
+          }
+        },
+        "output": "Three different greeting messages",
+        "xp": 40
+      }
+    },
+    {
+      "courseId": 4,
+      "chapterId": 1,
+      "exerciseId": "rendering-lists",
+      "exerciseName": "Rendering Lists",
+      "exerciseContent": {
+        "content": "<h2>Lists and Keys 🔑</h2><p>To render a list, use the JavaScript <code>map()</code> method.</p><pre><code>items.map(item => &lt;li key={item.id}&gt;{item.text}&lt;/li&gt;)</code></pre><p><strong>Note:</strong> Always provide a unique <code>key</code> prop for list items so React can track them efficiently.</p>",
+        "task": "<p><strong>Your Task:</strong></p><ol><li>Use <code>.map()</code> on the <code>fruits</code> array.</li><li>For each fruit, return an <code>&lt;li&gt;</code> containing the fruit name.</li><li>Use the fruit name itself as the <code>key</code>.</li></ol>",
+        "hint": "<p>💡 <strong>Hint:</strong> Use curly braces to switch to JS mode inside the UL: <code>&lt;ul&gt; { fruits.map(...) } &lt;/ul&gt;</code>.</p>",
+        "hintXp": 5,
+        "starterCode": {
+          "/App.js": {
+            "code": "export default function App() {\n  const fruits = ['Apple', 'Banana', 'Cherry'];\n\n  return (\n    <div>\n      <h1>Fruit List</h1>\n      <ul>\n        \n        \n      </ul>\n    </div>\n  );\n}"
+          },
+          "/index.js": {
+            "code": "import { StrictMode } from \"react\";\nimport { createRoot } from \"react-dom/client\";\nimport App from \"./App\";\n\nconst rootElement = document.getElementById(\"root\");\nconst root = createRoot(rootElement);\nroot.render(<StrictMode><App /></StrictMode>);"
+          }
+        },
+        "output": "A bulleted list displaying Apple, Banana, and Cherry",
+        "xp": 45
+      }
+    }
+  ]
+}

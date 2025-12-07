@@ -126,11 +126,12 @@ export default function CourseDetailPage() {
         <Header />
         <div className="flex items-center justify-center min-h-[60vh]">
           <div className="text-center">
-            <div className="relative mb-6">
-              <div className="inline-block animate-spin rounded-full h-20 w-20 border-4 border-slate-700 border-t-yellow-400"></div>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-4xl animate-pulse">📚</div>
-              </div>
+            <div className="mb-6">
+              <img 
+                src="/loading.gif" 
+                alt="Loading..." 
+                className="w-32 h-32 mx-auto"
+              />
             </div>
             <p className="text-2xl font-game text-white mb-2">Loading course...</p>
             <p className="text-gray-400">Please wait</p>
