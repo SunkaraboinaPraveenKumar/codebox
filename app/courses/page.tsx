@@ -43,7 +43,7 @@ export default function CoursesPage() {
       <section className="relative h-[400px] flex items-center justify-center overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: 'url(/home.png)' }}
+          style={{ backgroundImage: 'url(/course-banner.gif)' }}
         />
         <div className="absolute inset-0 bg-slate-900/50" />
         

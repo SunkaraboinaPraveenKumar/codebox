@@ -82,7 +82,13 @@ export default function DashboardPage() {
           <div className="lg:col-span-3 space-y-8">
             {/* Welcome Banner */}
             <div className="bg-gradient-to-r from-purple-900/50 via-blue-900/50 to-purple-900/50 border-4 border-purple-500/30 rounded-2xl p-6 flex items-center gap-6 hover:border-purple-500 transition-all">
-              <div className="text-8xl animate-bounce">👋</div>
+              <div className="flex-shrink-0">
+                <img 
+                  src="/alex_walk.gif" 
+                  alt="Welcome" 
+                  className="w-24 h-24 rounded-lg"
+                />
+              </div>
               <div className="flex-1">
                 <h2 className="text-3xl font-game mb-2 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
                   Welcome back, {user?.firstName || 'Learner'}!

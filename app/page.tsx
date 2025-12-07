@@ -45,7 +45,7 @@ export default function Home() {
       <section className="relative h-[600px] flex items-center justify-center overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: 'url(/home.png)' }}
+          style={{ backgroundImage: 'url(/hero.gif)' }}
         />
         <div className="absolute inset-0 bg-slate-900/40" />
         
