@@ -36,18 +36,18 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-zinc-950 via-pink-950/20 to-zinc-950">
+    <div className="min-h-screen bg-gradient-to-b from-zinc-950 via-yellow-950/20 to-zinc-950">
       <Header />
       
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(236,72,153,0.1)_0%,transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(234,179,8,0.1)_0%,transparent_50%)]" />
         
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="inline-block mb-6">
             <div className="text-8xl animate-bounce">📧</div>
           </div>
-          <h1 className="text-6xl md:text-7xl font-game mb-6 bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
+          <h1 className="text-6xl md:text-7xl font-game mb-6 bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
             Contact Us
           </h1>
           <p className="text-2xl text-gray-300 mb-8 max-w-2xl mx-auto">
@@ -61,9 +61,9 @@ export default function ContactPage() {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-8">
             {/* Contact Form */}
-            <div className="bg-gradient-to-br from-zinc-900 to-zinc-800 border-4 border-pink-500/30 rounded-2xl p-8">
+            <div className="bg-gradient-to-br from-zinc-900 to-zinc-800 border-4 border-yellow-500/30 rounded-2xl p-8">
               <h2 className="text-3xl font-game mb-6 text-white flex items-center gap-3">
-                <Send className="h-8 w-8 text-pink-500" />
+                <Send className="h-8 w-8 text-yellow-500" />
                 Send us a Message
               </h2>
               
@@ -124,7 +124,7 @@ export default function ContactPage() {
                     placeholder="Tell us more..."
                     required
                     rows={6}
-                    className="w-full px-3 py-2 bg-zinc-800 border border-zinc-700 rounded-md text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-pink-500"
+                    className="w-full px-3 py-2 bg-zinc-800 border border-zinc-700 rounded-md text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500"
                   />
                 </div>
 
@@ -132,7 +132,7 @@ export default function ContactPage() {
                   type="submit" 
                   variant="pixel" 
                   size="lg" 
-                  className="w-full bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 border-pink-400"
+                  className="w-full bg-gradient-to-r from-yellow-600 to-orange-600 hover:from-yellow-700 hover:to-orange-700 border-yellow-400"
                   disabled={sending}
                 >
                   {sending ? 'Sending...' : 'Send Message 📨'}
@@ -183,7 +183,7 @@ export default function ContactPage() {
               </div>
 
               {/* FAQ Link */}
-              <div className="bg-gradient-to-br from-pink-900 to-purple-900 border-4 border-pink-500 rounded-2xl p-8 text-center">
+              <div className="bg-gradient-to-br from-yellow-900 to-orange-900 border-4 border-yellow-500 rounded-2xl p-8 text-center">
                 <div className="text-5xl mb-4">❓</div>
                 <h3 className="text-2xl font-game mb-3 text-white">Quick Questions?</h3>
                 <p className="text-gray-300 mb-6">

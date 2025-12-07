@@ -12,23 +12,35 @@ export default function ProjectsPage() {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(249,115,22,0.1)_0%,transparent_50%)]" />
+      <section className="relative h-[400px] flex items-center justify-center overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: 'url(/hero3.gif)' }}
+        />
+        <div className="absolute inset-0 bg-slate-900/50" />
         
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <div className="mb-6">
-            <img 
-              src="/programmer.gif" 
-              alt="Projects" 
-              className="w-48 h-48 mx-auto rounded-lg"
-            />
-          </div>
-          <h1 className="text-6xl md:text-7xl font-game mb-6 bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">
-            Projects
+        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+          <h1 className="text-6xl md:text-7xl font-game mb-6 text-white" style={{
+            textShadow: '3px 3px 0px rgba(0,0,0,0.8)'
+          }}>
+            🛠️ Projects
           </h1>
-          <p className="text-2xl text-gray-300 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl md:text-2xl text-white font-medium mb-8" style={{
+            textShadow: '2px 2px 0px rgba(0,0,0,0.8)'
+          }}>
             Build real-world projects and showcase your skills
           </p>
+          <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-200">
+            <span className="bg-slate-800/60 px-4 py-2 rounded-full border border-slate-600">
+              🚀 Real-World Projects
+            </span>
+            <span className="bg-slate-800/60 px-4 py-2 rounded-full border border-slate-600">
+              💼 Portfolio Ready
+            </span>
+            <span className="bg-slate-800/60 px-4 py-2 rounded-full border border-slate-600">
+              🎨 Creative Freedom
+            </span>
+          </div>
         </div>
       </section>
 
