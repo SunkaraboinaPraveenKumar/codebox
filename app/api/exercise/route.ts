@@ -12,7 +12,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
     }
 
-    // Get chapter info
+    // Get chapter info with exercises list
     const chapter = await db
       .select()
       .from(courseChapters)
@@ -52,10 +52,17 @@ export async function POST(request: NextRequest) {
       .where(eq(courses.courseId, courseId))
       .limit(1)
 
+    if (course.length === 0) {
+      return NextResponse.json({ error: 'Course not found' }, { status: 404 })
+    }
+
     return NextResponse.json({
-      chapter: chapter[0],
+      chapter: {
+        ...chapter[0],
+        exercises: chapter[0].exercises || []
+      },
       exercise: exercise[0],
-      editorType: course[0]?.editorType || 'static',
+      editorType: course[0].editorType || 'static',
     })
   } catch (error) {
     console.error('Error in exercise API:', error)

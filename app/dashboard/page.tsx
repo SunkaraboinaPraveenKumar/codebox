@@ -22,11 +22,33 @@ interface EnrolledCourse {
   xpEarned: number
 }
 
+interface UserStats {
+  totalXP: number
+  badges: number
+  dayStreak: number
+  learningProgress: {
+    coursesEnrolled: number
+    exercisesCompleted: number
+    coursesCompleted: number
+  }
+  achievements: {
+    firstCourse: boolean
+    firstExercise: boolean
+    xp100: boolean
+    xp500: boolean
+    xp1000: boolean
+    exercises10: boolean
+    exercises50: boolean
+    courses3: boolean
+  }
+}
+
 export default function DashboardPage() {
   const { user } = useUser()
   const { userDetail } = useUserDetail()
   const [enrolledCourses, setEnrolledCourses] = useState<EnrolledCourse[]>([])
   const [allCourses, setAllCourses] = useState<any[]>([])
+  const [userStats, setUserStats] = useState<UserStats | null>(null)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -35,12 +57,14 @@ export default function DashboardPage() {
 
   const fetchData = async () => {
     try {
-      const [enrolledRes, allCoursesRes] = await Promise.all([
+      const [enrolledRes, allCoursesRes, statsRes] = await Promise.all([
         axios.get('/api/course?courseId=enroll'),
-        axios.get('/api/course')
+        axios.get('/api/course'),
+        axios.get('/api/user/stats')
       ])
       setEnrolledCourses(enrolledRes.data)
       setAllCourses(allCoursesRes.data.slice(0, 5))
+      setUserStats(statsRes.data)
     } catch (error) {
       console.error('Error fetching data:', error)
     } finally {
@@ -59,13 +83,20 @@ export default function DashboardPage() {
             {/* Welcome Banner */}
             <div className="bg-gradient-to-r from-purple-900/50 via-blue-900/50 to-purple-900/50 border-4 border-purple-500/30 rounded-2xl p-6 flex items-center gap-6 hover:border-purple-500 transition-all">
               <div className="text-8xl animate-bounce">👋</div>
-              <div>
+              <div className="flex-1">
                 <h2 className="text-3xl font-game mb-2 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
                   Welcome back, {user?.firstName || 'Learner'}!
                 </h2>
-                <p className="text-gray-300 text-lg">
+                <p className="text-gray-300 text-lg mb-2">
                   🚀 Continue your coding journey and earn more XP
                 </p>
+                {userStats && !loading && (
+                  <div className="flex items-center gap-4 text-sm text-gray-400">
+                    <span>⭐ {userStats.totalXP} XP</span>
+                    <span>🏆 {userStats.badges} badges</span>
+                    <span>🔥 {userStats.dayStreak} day streak</span>
+                  </div>
+                )}
               </div>
             </div>
 
@@ -211,27 +242,107 @@ export default function DashboardPage() {
             <div className="bg-gradient-to-br from-zinc-900 to-zinc-800 border-4 border-purple-500/30 rounded-2xl p-6">
               <div className="flex items-center gap-4 mb-6">
                 <div className="text-6xl">👤</div>
-                <p className="text-lg font-game text-gray-300 break-all">{user?.emailAddresses[0]?.emailAddress}</p>
+                <div className="flex-1">
+                  <p className="text-lg font-game text-gray-300 break-all">{user?.emailAddresses[0]?.emailAddress}</p>
+                  {userStats && (
+                    <p className="text-sm text-gray-400 mt-1">
+                      {userStats.learningProgress.coursesEnrolled} courses • {userStats.learningProgress.exercisesCompleted} exercises completed
+                    </p>
+                  )}
+                </div>
               </div>
               
               <div className="grid grid-cols-2 gap-4">
                 <div className="flex flex-col items-center gap-2 p-4 bg-gradient-to-br from-yellow-500/20 to-orange-500/20 border-2 border-yellow-500/30 rounded-lg hover:border-yellow-500 transition-all">
                   <div className="text-4xl">⭐</div>
-                  <p className="text-3xl font-bold text-yellow-500">{userDetail?.points || 0}</p>
+                  {loading ? (
+                    <div className="animate-pulse bg-yellow-500/30 h-8 w-16 rounded"></div>
+                  ) : (
+                    <p className="text-3xl font-bold text-yellow-500">{userStats?.totalXP || userDetail?.points || 0}</p>
+                  )}
                   <p className="text-sm text-gray-300 font-semibold">Total XP</p>
                 </div>
                 <div className="flex flex-col items-center gap-2 p-4 bg-gradient-to-br from-purple-500/20 to-pink-500/20 border-2 border-purple-500/30 rounded-lg hover:border-purple-500 transition-all">
                   <div className="text-4xl">🏆</div>
-                  <p className="text-3xl font-bold text-purple-400">0</p>
+                  {loading ? (
+                    <div className="animate-pulse bg-purple-400/30 h-8 w-12 rounded"></div>
+                  ) : (
+                    <p className="text-3xl font-bold text-purple-400">{userStats?.badges || 0}</p>
+                  )}
                   <p className="text-sm text-gray-300 font-semibold">Badges</p>
                 </div>
                 <div className="flex flex-col items-center gap-2 p-4 bg-gradient-to-br from-red-500/20 to-orange-500/20 border-2 border-red-500/30 rounded-lg col-span-2 hover:border-red-500 transition-all">
                   <div className="text-4xl">🔥</div>
-                  <p className="text-3xl font-bold text-red-500">0</p>
+                  {loading ? (
+                    <div className="animate-pulse bg-red-500/30 h-8 w-12 rounded"></div>
+                  ) : (
+                    <p className="text-3xl font-bold text-red-500">{userStats?.dayStreak || 0}</p>
+                  )}
                   <p className="text-sm text-gray-300 font-semibold">Day Streak</p>
                 </div>
               </div>
             </div>
+
+            {/* Achievements */}
+            {userStats && userStats.badges > 0 && (
+              <div className="bg-gradient-to-br from-zinc-900 to-zinc-800 border-4 border-yellow-500/30 rounded-2xl p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="text-5xl">🎖️</div>
+                  <h3 className="text-2xl font-game text-white">Achievements</h3>
+                </div>
+                
+                <div className="grid grid-cols-2 gap-3">
+                  {userStats.achievements.firstCourse && (
+                    <div className="flex items-center gap-2 p-2 bg-blue-500/20 border border-blue-500/30 rounded-lg">
+                      <span className="text-2xl">🎓</span>
+                      <span className="text-xs text-blue-300 font-semibold">First Course</span>
+                    </div>
+                  )}
+                  {userStats.achievements.firstExercise && (
+                    <div className="flex items-center gap-2 p-2 bg-green-500/20 border border-green-500/30 rounded-lg">
+                      <span className="text-2xl">✅</span>
+                      <span className="text-xs text-green-300 font-semibold">First Exercise</span>
+                    </div>
+                  )}
+                  {userStats.achievements.xp100 && (
+                    <div className="flex items-center gap-2 p-2 bg-yellow-500/20 border border-yellow-500/30 rounded-lg">
+                      <span className="text-2xl">⭐</span>
+                      <span className="text-xs text-yellow-300 font-semibold">100 XP</span>
+                    </div>
+                  )}
+                  {userStats.achievements.xp500 && (
+                    <div className="flex items-center gap-2 p-2 bg-orange-500/20 border border-orange-500/30 rounded-lg">
+                      <span className="text-2xl">🌟</span>
+                      <span className="text-xs text-orange-300 font-semibold">500 XP</span>
+                    </div>
+                  )}
+                  {userStats.achievements.xp1000 && (
+                    <div className="flex items-center gap-2 p-2 bg-purple-500/20 border border-purple-500/30 rounded-lg">
+                      <span className="text-2xl">💫</span>
+                      <span className="text-xs text-purple-300 font-semibold">1000 XP</span>
+                    </div>
+                  )}
+                  {userStats.achievements.exercises10 && (
+                    <div className="flex items-center gap-2 p-2 bg-cyan-500/20 border border-cyan-500/30 rounded-lg">
+                      <span className="text-2xl">🎯</span>
+                      <span className="text-xs text-cyan-300 font-semibold">10 Exercises</span>
+                    </div>
+                  )}
+                  {userStats.achievements.exercises50 && (
+                    <div className="flex items-center gap-2 p-2 bg-pink-500/20 border border-pink-500/30 rounded-lg">
+                      <span className="text-2xl">🚀</span>
+                      <span className="text-xs text-pink-300 font-semibold">50 Exercises</span>
+                    </div>
+                  )}
+                  {userStats.achievements.courses3 && (
+                    <div className="flex items-center gap-2 p-2 bg-indigo-500/20 border border-indigo-500/30 rounded-lg">
+                      <span className="text-2xl">📚</span>
+                      <span className="text-xs text-indigo-300 font-semibold">3 Courses</span>
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
 
             {/* Upgrade to Pro */}
             {!userDetail?.subscription && (
