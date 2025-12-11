@@ -4,12 +4,13 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useUser, UserButton } from '@clerk/nextjs'
 import { Button } from './ui/button'
+import { ThemeSwitcher } from './ThemeSwitcher'
 
 export function Header() {
   const { isSignedIn } = useUser()
 
   return (
-    <header className="bg-slate-900 border-b border-slate-700 sticky top-0 z-50">
+    <header className="bg-card border-b border-border sticky top-0 z-50 backdrop-blur-sm">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3 hover:scale-105 transition-transform cursor-pointer">
           <Image
@@ -19,29 +20,30 @@ export function Header() {
             height={40}
             className="rounded-lg"
           />
-          <span className="text-2xl font-game text-white">
+          <span className="text-2xl font-game text-foreground">
             CodeBox
           </span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-8">
           <div className="relative group">
-            <Link href="/courses" className="text-white hover:text-yellow-400 transition-colors cursor-pointer font-medium">
+            <Link href="/courses" className="text-foreground hover:text-primary transition-colors cursor-pointer font-medium">
               Courses
             </Link>
           </div>
-          <Link href="/projects" className="text-white hover:text-yellow-400 transition-colors cursor-pointer font-medium">
+          <Link href="/projects" className="text-foreground hover:text-primary transition-colors cursor-pointer font-medium">
             Projects
           </Link>
-          <Link href="/pricing" className="text-white hover:text-yellow-400 transition-colors cursor-pointer font-medium">
+          <Link href="/pricing" className="text-foreground hover:text-primary transition-colors cursor-pointer font-medium">
             Pricing
           </Link>
-          <Link href="/contact" className="text-white hover:text-yellow-400 transition-colors cursor-pointer font-medium">
+          <Link href="/contact" className="text-foreground hover:text-primary transition-colors cursor-pointer font-medium">
             Contact Us
           </Link>
         </nav>
 
         <div className="flex items-center gap-4">
+          <ThemeSwitcher />
           {isSignedIn ? (
             <>
               <Link href="/dashboard">

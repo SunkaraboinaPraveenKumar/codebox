@@ -11,8 +11,9 @@ export function Providers({ children }: { children: React.ReactNode }) {
       <ThemeProvider
         attribute="class"
         defaultTheme="dark"
-        enableSystem
-        disableTransitionOnChange
+        themes={['dark', 'gaming', 'retro', 'ocean', 'nature', 'sunset']}
+        enableSystem={false}
+        disableTransitionOnChange={false}
       >
         <UserDetailProvider>
           {children}

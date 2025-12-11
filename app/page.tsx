@@ -38,7 +38,7 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-900">
+    <div className="min-h-screen bg-background">
       <Header />
       
       {/* Hero Section */}
@@ -47,20 +47,20 @@ export default function Home() {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: 'url(/hero.gif)' }}
         />
-        <div className="absolute inset-0 bg-slate-900/40" />
+        <div className="absolute inset-0 bg-background/40" />
         
         <div className="relative z-10 text-center px-4">
-          <h1 className="text-6xl md:text-7xl font-bold font-game mb-2 text-white" style={{
+          <h1 className="text-6xl md:text-7xl font-bold font-game mb-2 text-foreground" style={{
             textShadow: '3px 3px 0px rgba(0,0,0,0.8)'
           }}>
             Start Your
           </h1>
-          <h1 className="text-7xl md:text-8xl font-bold font-game mb-8 text-yellow-400" style={{
+          <h1 className="text-7xl md:text-8xl font-bold font-game mb-8 text-primary" style={{
             textShadow: '3px 3px 0px rgba(0,0,0,0.8)'
           }}>
             Coding Adventure
           </h1>
-          <p className="text-xl md:text-2xl text-white mb-12 font-medium" style={{
+          <p className="text-xl md:text-2xl text-foreground mb-12 font-medium" style={{
             textShadow: '2px 2px 0px rgba(0,0,0,0.8)'
           }}>
             Beginner friendly coding courses and projects
@@ -74,19 +74,19 @@ export default function Home() {
       </section>
 
       {/* Available Courses Section */}
-      <section className="bg-slate-800 py-16">
+      <section className="bg-card py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-game mb-4 text-white" style={{
+            <h2 className="text-4xl md:text-5xl font-game mb-4 text-foreground" style={{
               textShadow: '2px 2px 0px rgba(0,0,0,0.8)'
             }}>
               Available Courses
             </h2>
-            <p className="text-lg md:text-xl text-gray-300">Choose your learning path and start coding today!</p>
+            <p className="text-lg md:text-xl text-muted-foreground">Choose your learning path and start coding today!</p>
           </div>
           
           {loading ? (
-            <div className="text-center text-white text-xl">
+            <div className="text-center text-foreground text-xl">
               <div className="mb-4">
                 <img 
                   src="/loading.gif" 

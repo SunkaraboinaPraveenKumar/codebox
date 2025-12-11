@@ -58,3 +58,51 @@ export const completedExercise = pgTable('completed_exercise', {
   exerciseId: integer('exercise_id').notNull(),
   userId: varchar('user_id', { length: 255 }).notNull(),
 });
+
+// Community Posts table
+export const communityPosts = pgTable('community_posts', {
+  id: serial('id').primaryKey(),
+  userId: varchar('user_id', { length: 255 }).notNull(),
+  title: varchar('title', { length: 255 }).notNull(),
+  content: varchar('content', { length: 5000 }).notNull(),
+  category: varchar('category', { length: 100 }).notNull(),
+  tags: varchar('tags', { length: 500 }),
+  likes: integer('likes').default(0),
+  replies: integer('replies').default(0),
+  createdAt: timestamp('created_at').defaultNow(),
+  updatedAt: timestamp('updated_at').defaultNow(),
+});
+
+// Community Replies table
+export const communityReplies = pgTable('community_replies', {
+  id: serial('id').primaryKey(),
+  postId: integer('post_id').notNull(),
+  userId: varchar('user_id', { length: 255 }).notNull(),
+  content: varchar('content', { length: 2000 }).notNull(),
+  likes: integer('likes').default(0),
+  createdAt: timestamp('created_at').defaultNow(),
+});
+
+// Community Likes table
+export const communityLikes = pgTable('community_likes', {
+  id: serial('id').primaryKey(),
+  userId: varchar('user_id', { length: 255 }).notNull(),
+  postId: integer('post_id'),
+  replyId: integer('reply_id'),
+  createdAt: timestamp('created_at').defaultNow(),
+});
+
+// User Profiles table
+export const userProfiles = pgTable('user_profiles', {
+  id: serial('id').primaryKey(),
+  userId: varchar('user_id', { length: 255 }).unique().notNull(),
+  displayName: varchar('display_name', { length: 255 }),
+  bio: varchar('bio', { length: 500 }),
+  avatar: varchar('avatar', { length: 500 }),
+  githubUrl: varchar('github_url', { length: 255 }),
+  linkedinUrl: varchar('linkedin_url', { length: 255 }),
+  websiteUrl: varchar('website_url', { length: 255 }),
+  location: varchar('location', { length: 100 }),
+  joinedAt: timestamp('joined_at').defaultNow(),
+  lastActive: timestamp('last_active').defaultNow(),
+});

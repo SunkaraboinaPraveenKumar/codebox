@@ -152,3 +152,135 @@
 .animate-accordion-up {
   animation: accordion-up 0.2s ease-out;
 }
+
+/* Theme Variables */
+.light {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(0.985 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+}
+
+.gaming {
+  --background: oklch(0.05 0 0);
+  --foreground: oklch(0.9 0.3 120);
+  --card: oklch(0.1 0.2 280);
+  --card-foreground: oklch(0.95 0.25 120);
+  --popover: oklch(0.08 0.15 280);
+  --popover-foreground: oklch(0.9 0.3 120);
+  --primary: oklch(0.7 0.4 120);
+  --primary-foreground: oklch(0.05 0 0);
+  --secondary: oklch(0.15 0.3 280);
+  --secondary-foreground: oklch(0.9 0.3 120);
+  --muted: oklch(0.12 0.2 280);
+  --muted-foreground: oklch(0.6 0.2 120);
+  --accent: oklch(0.8 0.4 300);
+  --accent-foreground: oklch(0.05 0 0);
+  --destructive: oklch(0.7 0.4 0);
+  --border: oklch(0.2 0.3 280);
+  --input: oklch(0.15 0.2 280);
+  --ring: oklch(0.7 0.4 120);
+}
+
+.retro {
+  --background: oklch(0.08 0.15 280);
+  --foreground: oklch(0.9 0.3 320);
+  --card: oklch(0.12 0.2 300);
+  --card-foreground: oklch(0.95 0.25 320);
+  --popover: oklch(0.1 0.18 300);
+  --popover-foreground: oklch(0.9 0.3 320);
+  --primary: oklch(0.8 0.4 320);
+  --primary-foreground: oklch(0.08 0.15 280);
+  --secondary: oklch(0.18 0.25 280);
+  --secondary-foreground: oklch(0.9 0.3 320);
+  --muted: oklch(0.15 0.2 300);
+  --muted-foreground: oklch(0.65 0.2 320);
+  --accent: oklch(0.75 0.35 60);
+  --accent-foreground: oklch(0.08 0.15 280);
+  --destructive: oklch(0.7 0.4 0);
+  --border: oklch(0.25 0.3 300);
+  --input: oklch(0.18 0.25 300);
+  --ring: oklch(0.8 0.4 320);
+}
+
+.ocean {
+  --background: oklch(0.1 0.15 220);
+  --foreground: oklch(0.9 0.2 200);
+  --card: oklch(0.15 0.2 210);
+  --card-foreground: oklch(0.95 0.15 200);
+  --popover: oklch(0.12 0.18 210);
+  --popover-foreground: oklch(0.9 0.2 200);
+  --primary: oklch(0.6 0.3 200);
+  --primary-foreground: oklch(0.95 0.05 200);
+  --secondary: oklch(0.2 0.25 220);
+  --secondary-foreground: oklch(0.9 0.2 200);
+  --muted: oklch(0.18 0.2 215);
+  --muted-foreground: oklch(0.65 0.15 200);
+  --accent: oklch(0.7 0.35 180);
+  --accent-foreground: oklch(0.1 0.15 220);
+  --destructive: oklch(0.65 0.35 20);
+  --border: oklch(0.25 0.25 210);
+  --input: oklch(0.2 0.2 215);
+  --ring: oklch(0.6 0.3 200);
+}
+
+.nature {
+  --background: oklch(0.12 0.1 120);
+  --foreground: oklch(0.9 0.15 100);
+  --card: oklch(0.18 0.15 110);
+  --card-foreground: oklch(0.95 0.1 100);
+  --popover: oklch(0.15 0.12 115);
+  --popover-foreground: oklch(0.9 0.15 100);
+  --primary: oklch(0.5 0.25 120);
+  --primary-foreground: oklch(0.95 0.05 100);
+  --secondary: oklch(0.25 0.2 110);
+  --secondary-foreground: oklch(0.9 0.15 100);
+  --muted: oklch(0.22 0.15 115);
+  --muted-foreground: oklch(0.65 0.12 100);
+  --accent: oklch(0.6 0.3 80);
+  --accent-foreground: oklch(0.12 0.1 120);
+  --destructive: oklch(0.6 0.3 30);
+  --border: oklch(0.3 0.2 115);
+  --input: oklch(0.25 0.15 115);
+  --ring: oklch(0.5 0.25 120);
+}
+
+.sunset {
+  --background: oklch(0.1 0.15 40);
+  --foreground: oklch(0.9 0.2 60);
+  --card: oklch(0.15 0.2 50);
+  --card-foreground: oklch(0.95 0.15 60);
+  --popover: oklch(0.12 0.18 45);
+  --popover-foreground: oklch(0.9 0.2 60);
+  --primary: oklch(0.7 0.35 50);
+  --primary-foreground: oklch(0.1 0.15 40);
+  --secondary: oklch(0.2 0.25 40);
+  --secondary-foreground: oklch(0.9 0.2 60);
+  --muted: oklch(0.18 0.2 45);
+  --muted-foreground: oklch(0.65 0.15 60);
+  --accent: oklch(0.75 0.4 20);
+  --accent-foreground: oklch(0.1 0.15 40);
+  --destructive: oklch(0.65 0.35 10);
+  --border: oklch(0.25 0.25 45);
+  --input: oklch(0.2 0.2 45);
+  --ring: oklch(0.7 0.35 50);
+}
+
+/* Theme Transitions */
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}

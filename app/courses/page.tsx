@@ -36,7 +36,7 @@ export default function CoursesPage() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-900">
+    <div className="min-h-screen bg-background">
       <Header />
       
       {/* Course Banner */}
@@ -45,27 +45,27 @@ export default function CoursesPage() {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: 'url(/course-banner.gif)' }}
         />
-        <div className="absolute inset-0 bg-slate-900/50" />
+        <div className="absolute inset-0 bg-background/50" />
         
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-6xl font-game mb-6 text-white" style={{
+          <h1 className="text-5xl md:text-6xl font-game mb-6 text-foreground" style={{
             textShadow: '3px 3px 0px rgba(0,0,0,0.8)'
           }}>
             📚 Explore All Courses
           </h1>
-          <p className="text-xl md:text-2xl text-white font-medium mb-8" style={{
+          <p className="text-xl md:text-2xl text-foreground font-medium mb-8" style={{
             textShadow: '2px 2px 0px rgba(0,0,0,0.8)'
           }}>
             Choose from our collection of interactive coding courses
           </p>
-          <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-200">
-            <span className="bg-slate-800/60 px-4 py-2 rounded-full border border-slate-600">
+          <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
+            <span className="bg-card/60 px-4 py-2 rounded-full border border-border">
               🎯 Beginner Friendly
             </span>
-            <span className="bg-slate-800/60 px-4 py-2 rounded-full border border-slate-600">
+            <span className="bg-card/60 px-4 py-2 rounded-full border border-border">
               💻 Interactive Coding
             </span>
-            <span className="bg-slate-800/60 px-4 py-2 rounded-full border border-slate-600">
+            <span className="bg-card/60 px-4 py-2 rounded-full border border-border">
               🏆 Earn XP & Badges
             </span>
           </div>
@@ -73,10 +73,10 @@ export default function CoursesPage() {
       </section>
 
       {/* Course List */}
-      <section className="bg-slate-800 min-h-screen py-16">
+      <section className="bg-card min-h-screen py-16">
         <div className="container mx-auto px-4">
           {loading ? (
-            <div className="text-center text-white text-xl py-20">
+            <div className="text-center text-foreground text-xl py-20">
               <div className="mb-6">
                 <img 
                   src="/loading.gif" 
@@ -85,7 +85,7 @@ export default function CoursesPage() {
                 />
               </div>
               <p className="text-2xl font-game">Loading courses...</p>
-              <p className="text-gray-400 mt-2">Please wait while we fetch the latest courses</p>
+              <p className="text-muted-foreground mt-2">Please wait while we fetch the latest courses</p>
             </div>
           ) : courses.length === 0 ? (
             <div className="text-center py-20">
@@ -96,8 +96,8 @@ export default function CoursesPage() {
                   className="w-48 h-48 mx-auto rounded-lg"
                 />
               </div>
-              <h3 className="text-4xl font-game text-white mb-4">No Courses Available</h3>
-              <p className="text-xl text-gray-400 mb-8 max-w-md mx-auto">
+              <h3 className="text-4xl font-game text-foreground mb-4">No Courses Available</h3>
+              <p className="text-xl text-muted-foreground mb-8 max-w-md mx-auto">
                 We're working hard to bring you amazing courses. Check back soon!
               </p>
               <button className="bg-yellow-400 hover:bg-yellow-500 text-black font-bold text-lg px-8 py-3 rounded-lg border-4 border-yellow-600 hover:border-yellow-700 transition-all duration-200 hover:scale-105 shadow-lg font-game cursor-pointer">
@@ -107,10 +107,10 @@ export default function CoursesPage() {
           ) : (
             <>
               <div className="text-center mb-12">
-                <h2 className="text-3xl font-game text-white mb-4">
+                <h2 className="text-3xl font-game text-foreground mb-4">
                   {courses.length} Course{courses.length !== 1 ? 's' : ''} Available
                 </h2>
-                <p className="text-gray-400">Start your coding journey today!</p>
+                <p className="text-muted-foreground">Start your coding journey today!</p>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {courses.map((course) => (

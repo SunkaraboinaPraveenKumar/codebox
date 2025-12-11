@@ -17,27 +17,27 @@ export default function ProjectsPage() {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: 'url(/hero3.gif)' }}
         />
-        <div className="absolute inset-0 bg-slate-900/50" />
+        <div className="absolute inset-0 bg-background/50" />
         
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-          <h1 className="text-6xl md:text-7xl font-game mb-6 text-white" style={{
+          <h1 className="text-6xl md:text-7xl font-game mb-6 text-foreground" style={{
             textShadow: '3px 3px 0px rgba(0,0,0,0.8)'
           }}>
             🛠️ Projects
           </h1>
-          <p className="text-xl md:text-2xl text-white font-medium mb-8" style={{
+          <p className="text-xl md:text-2xl text-foreground font-medium mb-8" style={{
             textShadow: '2px 2px 0px rgba(0,0,0,0.8)'
           }}>
             Build real-world projects and showcase your skills
           </p>
-          <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-200">
-            <span className="bg-slate-800/60 px-4 py-2 rounded-full border border-slate-600">
+          <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
+            <span className="bg-card/60 px-4 py-2 rounded-full border border-border">
               🚀 Real-World Projects
             </span>
-            <span className="bg-slate-800/60 px-4 py-2 rounded-full border border-slate-600">
+            <span className="bg-card/60 px-4 py-2 rounded-full border border-border">
               💼 Portfolio Ready
             </span>
-            <span className="bg-slate-800/60 px-4 py-2 rounded-full border border-slate-600">
+            <span className="bg-card/60 px-4 py-2 rounded-full border border-border">
               🎨 Creative Freedom
             </span>
           </div>
